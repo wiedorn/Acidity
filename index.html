@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Chemie 10 | Acidität von Ethansäure und Ethanol</title>
+  <title>Acidität von Ethansäure und Ethanol</title>
   <style>
     :root {
       --bg: #f4f7fb;
@@ -63,33 +63,11 @@
       gap: 10px;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .brand-badge {
-      background: var(--primary);
-      color: #fff;
-      font-weight: 700;
-      font-size: 0.8rem;
-      padding: 4px 10px;
-      border-radius: 999px;
-      letter-spacing: 0.02em;
-    }
-
     .brand h1 {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       margin: 0;
       font-weight: 700;
       color: #0f172a;
-    }
-
-    .topbar-controls {
-      display: flex;
-      align-items: center;
-      gap: 10px;
     }
 
     .score-pill {
@@ -98,39 +76,20 @@
       border: 1px solid #fde68a;
       font-weight: 700;
       font-size: 0.88rem;
-      padding: 6px 12px;
+      padding: 6px 14px;
       border-radius: 999px;
       display: flex;
       align-items: center;
       gap: 6px;
     }
 
-    .teacher-btn {
-      background: var(--surface-alt);
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      font-weight: 600;
-      padding: 6px 12px;
-      border-radius: 999px;
-      cursor: pointer;
-      min-height: 36px;
-      transition: all 0.2s;
-    }
-
-    .teacher-btn.active {
-      background: #0f172a;
-      color: #fff;
-      border-color: #0f172a;
-    }
-
-    /* Stepper Navigation */
+    /* Stepper Navigation (4 Phasen) */
     .stepper {
       max-width: 1140px;
       margin: 0 auto;
       padding: 8px 18px 12px;
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 8px;
     }
 
@@ -138,7 +97,7 @@
       background: var(--surface-alt);
       border: 1.5px solid var(--border);
       border-radius: 10px;
-      padding: 8px 10px;
+      padding: 8px 12px;
       text-align: left;
       cursor: pointer;
       min-height: 48px;
@@ -172,7 +131,7 @@
     }
 
     .step-title {
-      font-size: 0.85rem;
+      font-size: 0.86rem;
       font-weight: 600;
       color: var(--text);
       white-space: nowrap;
@@ -225,6 +184,24 @@
       margin: 0;
       font-size: 1.25rem;
       color: #0f172a;
+    }
+
+    .level-banner {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #0f172a;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 6px 14px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+
+    .level-banner.particle {
+      background: #1d4ed8;
     }
 
     .tag {
@@ -306,10 +283,6 @@
       background: #b91c1c;
     }
 
-    .btn.success {
-      background: var(--success);
-    }
-
     .nav-footer {
       display: flex;
       justify-content: space-between;
@@ -318,7 +291,7 @@
       gap: 12px;
     }
 
-    /* Phase 1: Virtual Lab */
+    /* Phase 1: Virtual Lab (Stoffebene) & Equilibrium (Teilchenebene) */
     .lab-bench {
       background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
       border: 1px solid var(--border);
@@ -384,6 +357,38 @@
       background: var(--success-light);
       color: var(--success);
       border: 1px solid #bbf7d0;
+    }
+
+    .eq-box {
+      background: var(--surface-alt);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+    }
+
+    .eq-equation {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin: 10px 0;
+      background: #ffffff;
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .sim-canvas {
+      width: 100%;
+      height: 200px;
+      background: #f0f9ff;
+      border: 1px solid #bae6fd;
+      border-radius: 10px;
+      display: block;
+      margin: 10px 0;
+      cursor: pointer;
     }
 
     /* Interactive Quiz / Task Boxes */
@@ -583,8 +588,8 @@
 
     .cleavage-canvas {
       width: 100%;
-      max-width: 680px;
-      height: 195px;
+      max-width: 720px;
+      height: 230px;
       background: #ffffff;
       border: 1.5px solid #cbd5e1;
       border-radius: 12px;
@@ -638,25 +643,7 @@
       transition: width 0.08s linear;
     }
 
-    /* Phase 3: Equilibrium & Nomenclature */
-    .eq-box {
-      background: var(--surface-alt);
-      border: 1.5px solid var(--border);
-      border-radius: 12px;
-      padding: 14px;
-    }
-
-    .sim-canvas {
-      width: 100%;
-      height: 190px;
-      background: #f0f9ff;
-      border: 1px solid #bae6fd;
-      border-radius: 10px;
-      display: block;
-      margin: 10px 0;
-    }
-
-    /* Phase 4: Mesomerie & Energy */
+    /* Phase 3: Mesomerie & Energy */
     .tab-bar {
       display: flex;
       gap: 10px;
@@ -703,7 +690,7 @@
       75% { transform: translateX(6px); }
     }
 
-    /* Phase 5: Dialogue & Notebook Entry */
+    /* Phase 4: Dialogue & Notebook Entry */
     .chip-bank {
       display: flex;
       flex-wrap: wrap;
@@ -859,25 +846,6 @@
       background: var(--primary-light);
       border-color: var(--primary);
     }
-
-    .teacher-only {
-      display: none;
-    }
-
-    body.teacher-mode .teacher-only {
-      display: inline-flex;
-    }
-
-    /* Unequal equilibrium arrow helper */
-    .eq-arrow-stack {
-      display: inline-flex;
-      flex-direction: column;
-      align-items: center;
-      vertical-align: middle;
-      line-height: 0.65;
-      margin: 0 6px;
-      font-weight: 700;
-    }
   </style>
 </head>
 <body>
@@ -885,18 +853,14 @@
 <header>
   <div class="topbar">
     <div class="brand">
-      <span class="brand-badge">Chemie 10 · Bayern</span>
       <h1>Acidität von Ethansäure &amp; Ethanol</h1>
     </div>
-    <div class="topbar-controls">
-      <div class="score-pill" id="scoreDisplay">★ 0 / 10 Aufgaben</div>
-      <button class="teacher-btn" id="teacherToggle" onclick="toggleTeacherMode()">👩‍🏫 Lehrer-Modus: AUS</button>
-    </div>
+    <div class="score-pill" id="scoreDisplay">★ 0 / 9 Aufgaben</div>
   </div>
   <nav class="stepper" aria-label="Lernphasen">
     <button class="step-btn active" id="nav-1" onclick="goPhase(1)">
       <span class="step-num">Phase 1 <span id="check-1"></span></span>
-      <span class="step-title">1. Versuch &amp; pH-Wert</span>
+      <span class="step-title">1. Stoff- &amp; Teilchenebene</span>
     </button>
     <button class="step-btn" id="nav-2" onclick="goPhase(2)">
       <span class="step-num">Phase 2 <span id="check-2"></span></span>
@@ -904,15 +868,11 @@
     </button>
     <button class="step-btn" id="nav-3" onclick="goPhase(3)">
       <span class="step-num">Phase 3 <span id="check-3"></span></span>
-      <span class="step-title">3. Gleichgewicht</span>
+      <span class="step-title">3. Anion &amp; Mesomerie</span>
     </button>
     <button class="step-btn" id="nav-4" onclick="goPhase(4)">
       <span class="step-num">Phase 4 <span id="check-4"></span></span>
-      <span class="step-title">4. Anion &amp; Mesomerie</span>
-    </button>
-    <button class="step-btn" id="nav-5" onclick="goPhase(5)">
-      <span class="step-num">Phase 5 <span id="check-5"></span></span>
-      <span class="step-title">5. Hefteintrag &amp; Exkurs</span>
+      <span class="step-title">4. Hefteintrag &amp; Exkurs</span>
     </button>
   </nav>
 </header>
@@ -920,17 +880,20 @@
 <main>
   <!-- ==================== PHASE 1 ==================== -->
   <section class="phase-section active" id="phase-1">
+    <!-- STOFFEBENE -->
     <div class="card">
       <div class="card-header">
-        <h2>Phase 1: Vergleich im Experiment (Makroebene)</h2>
-        <span class="tag">Versuch &amp; Beobachtung</span>
+        <h2>Phase 1: Vergleich im Experiment &amp; Gleichgewicht</h2>
+        <span class="tag">Stoffebene &amp; Teilchenebene</span>
       </div>
+
+      <div class="level-banner">🧪 Stoffebene: Versuch &amp; Beobachtung</div>
       <p>
         Sowohl <strong>Ethansäure-Moleküle</strong> als auch <strong>Ethanol-Moleküle</strong> besitzen eine Hydroxy-Gruppe (<strong>−O−H</strong>).
         Reagieren deshalb beide Stoffe in wässriger Lösung sauer?
       </p>
       <p>
-        <strong>Arbeitsauftrag:</strong> Tropfe Universalindikator in beide Reagenzgläser (gleiche Konzentration <em>c</em> = 1 mol/L, unvergälltes Ethanol) und miss anschließend den pH-Wert.
+        <strong>Arbeitsauftrag:</strong> Tropfe Universalindikator in beide Reagenzgläser (gleiche Konzentration <em>c</em> = 1 mol/L, unvergälltes Ethanol) und lies anschließend den pH-Wert ab.
       </p>
 
       <div class="lab-bench">
@@ -972,17 +935,17 @@
       <!-- Aufgabe 1.1 -->
       <div class="task-box" id="task-1-1">
         <h3>
-          <span>Aufgabe 1.1: Beobachtung &amp; Deutung auf Teilchenebene</span>
+          <span>Aufgabe 1.1: Beobachtung auf Stoffebene &amp; erste Deutung</span>
           <span class="tag task" id="badge-t11">Offen</span>
         </h3>
         <p>
-          Wässrige Ethansäure-Lösung färbt Universalindikator rot (pH = 2). Wässrige Ethanol-Lösung gleicher Konzentration bleibt grün (pH = 7). Welche Schlussfolgerung auf Teilchenebene ist richtig?
+          Wässrige Ethansäure-Lösung färbt Universalindikator rot (pH = 2). Wässrige Ethanol-Lösung gleicher Konzentration bleibt grün (pH = 7). Welche Schlussfolgerung ist richtig?
         </p>
         <div class="option-grid">
           <button class="opt-btn" onclick="checkMC('1-1', this, false, 'Falsch: Beide Moleküle enthalten eine −O−H-Gruppe, reagieren aber mit Wasser völlig unterschiedlich.')">
             Nur Ethansäure-Moleküle besitzen eine Hydroxy-Gruppe (−O−H).
           </button>
-          <button class="opt-btn" onclick="checkMC('1-1', this, true, 'Richtig! Ethansäure-Moleküle übertragen Protonen auf Wasser-Moleküle, wodurch Oxonium-Ionen (H₃O⁺) entstehen. Ethanol-Moleküle reagieren praktisch nicht als Säure.')">
+          <button class="opt-btn" onclick="checkMC('1-1', this, true, 'Richtig! Ethansäure-Moleküle übertragen Protonen auf Wasser-Moleküle, wodurch Oxonium-Ionen (H₃O⁺) entstehen. Ethanol-Moleküle reagieren nicht bzw. kaum als Säure.')">
             Ethansäure-Moleküle reagieren als Protonendonatoren mit Wasser zu H<sub>3</sub>O<sup>+</sup>-Ionen; Ethanol-Moleküle reagieren nicht bzw. kaum als Säure.
           </button>
           <button class="opt-btn" onclick="checkMC('1-1', this, false, 'Falsch: Ein pH-Wert von 7 bedeutet, dass keine Erhöhung der Oxonium-Ionen-Konzentration stattfindet – Ethanol reagiert neutral.')">
@@ -990,6 +953,120 @@
           </button>
         </div>
         <div class="feedback" id="fb-1-1"></div>
+      </div>
+
+      <hr style="border:none; border-top:1.5px solid #e2e8f0; margin:24px 0;" />
+
+      <!-- TEILCHENEBENE -->
+      <div class="level-banner particle">⚛️ Teilchenebene: Reaktionsgleichungen &amp; Gleichgewicht</div>
+      <p>
+        Auf der <strong>Teilchenebene</strong> wird bei einer Säure-Base-Reaktion ein Proton (H<sup>+</sup>) auf ein Wasser-Molekül übertragen.
+        Spalte in beiden Simulationen selbst Protonen ab und beobachte, wie schnell die gebildeten Oxonium-Ionen (H<sub>3</sub>O<sup>+</sup>) wieder zurückreagieren!
+      </p>
+
+      <div class="grid-2">
+        <!-- Kammer A: Ethansäure -->
+        <div class="eq-box">
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:6px; flex-wrap:wrap;">
+            <strong>A: Ethansäure + Wasser</strong>
+            <span class="ph-badge acidic" id="live-ph-a">pH = 2 (sauer)</span>
+          </div>
+          <!-- Gleichung mit längerem Pfeil für Hinreaktion -->
+          <div class="eq-equation">
+            <span>CH<sub>3</sub>COOH + H<sub>2</sub>O</span>
+            <svg width="58" height="20" viewBox="0 0 58 20" aria-label="Gleichgewichtspfeil mit längerer Hinreaktion">
+              <!-- Hinreaktion (oben, lang) -->
+              <line x1="4" y1="6" x2="52" y2="6" stroke="#1e293b" stroke-width="2" />
+              <polyline points="46,2 53,6 46,10" fill="none" stroke="#1e293b" stroke-width="2" />
+              <!-- Rückreaktion (unten, kürzer) -->
+              <line x1="16" y1="14" x2="44" y2="14" stroke="#64748b" stroke-width="1.8" />
+              <polyline points="22,10 15,14 22,18" fill="none" stroke="#64748b" stroke-width="1.8" />
+            </svg>
+            <span>CH<sub>3</sub>COO<sup>−</sup> + H<sub>3</sub>O<sup>+</sup></span>
+          </div>
+          <canvas class="sim-canvas" id="canvas-acid" width="440" height="200" onclick="forceAcidDissociation()"></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+            <small style="color:var(--text-muted);">
+              <span style="color:#dc2626; font-weight:700;">●</span> CH<sub>3</sub>COOH &nbsp;
+              <span style="color:#f59e0b; font-weight:700;">●</span> CH<sub>3</sub>COO<sup>−</sup> &nbsp;
+              <span style="color:#1d4ed8; font-weight:700;">●</span> H<sub>3</sub>O<sup>+</sup>
+            </small>
+            <button class="btn acid" style="padding:6px 12px; font-size:0.84rem; min-height:36px;" onclick="forceAcidDissociation()">⚡ Proton abspalten</button>
+          </div>
+        </div>
+
+        <!-- Kammer B: Ethanol -->
+        <div class="eq-box">
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:6px; flex-wrap:wrap;">
+            <strong>B: Ethanol + Wasser</strong>
+            <span class="ph-badge neutral" id="live-ph-b">pH = 7 (neutral)</span>
+          </div>
+          <!-- Gleichung mit längerem Pfeil für Rückreaktion -->
+          <div class="eq-equation">
+            <span>CH<sub>3</sub>CH<sub>2</sub>OH + H<sub>2</sub>O</span>
+            <svg width="58" height="20" viewBox="0 0 58 20" aria-label="Gleichgewichtspfeil mit längerer Rückreaktion">
+              <!-- Hinreaktion (oben, kürzer) -->
+              <line x1="14" y1="6" x2="42" y2="6" stroke="#64748b" stroke-width="1.8" />
+              <polyline points="36,2 43,6 36,10" fill="none" stroke="#64748b" stroke-width="1.8" />
+              <!-- Rückreaktion (unten, lang) -->
+              <line x1="6" y1="14" x2="54" y2="14" stroke="#1e293b" stroke-width="2" />
+              <polyline points="12,10 5,14 12,18" fill="none" stroke="#1e293b" stroke-width="2" />
+            </svg>
+            <span>CH<sub>3</sub>CH<sub>2</sub>O<sup>−</sup> + H<sub>3</sub>O<sup>+</sup></span>
+          </div>
+          <canvas class="sim-canvas" id="canvas-alc" width="440" height="200" onclick="forceEthanolDissociation()"></canvas>
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+            <small style="color:var(--text-muted);">
+              <span style="color:#16a34a; font-weight:700;">●</span> CH<sub>3</sub>CH<sub>2</sub>OH &nbsp;
+              <span style="color:#9333ea; font-weight:700;">●</span> CH<sub>3</sub>CH<sub>2</sub>O<sup>−</sup> &nbsp;
+              <span style="color:#1d4ed8; font-weight:700;">●</span> H<sub>3</sub>O<sup>+</sup>
+            </small>
+            <button class="btn" style="padding:6px 12px; font-size:0.84rem; min-height:36px;" onclick="forceEthanolDissociation()">⚡ Proton abspalten (mehrfach möglich)</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aufgabe 1.2 (ehemals 3.1): Nomenklatur -->
+      <div class="task-box">
+        <h3>
+          <span>Aufgabe 1.2: Nomenklatur der entstehenden Anionen (Teilchenebene)</span>
+          <span class="tag task" id="badge-t12">Offen</span>
+        </h3>
+        <p>
+          Das Anion der Ethansäure heißt <strong>Ethanoat-Ion</strong> (Stoffklasse: <em>Carboxylat-Ionen</em>). Analog dazu benennt man die deprotonierten Ionen von Alkanolen als <strong>Alkoholat-Ionen</strong>. Wie heißt demnach das Ion CH<sub>3</sub>−CH<sub>2</sub>−O<sup>⊖</sup>?
+        </p>
+        <div class="option-grid">
+          <button class="opt-btn" onclick="checkMC('1-2', this, false, 'Falsch: Die Endung -oat gehört zu den Carboxylat-Ionen (Anionen der Carbonsäuren).')">
+            Ethanoat-Ion (Carboxylat-Ion)
+          </button>
+          <button class="opt-btn" onclick="checkMC('1-2', this, true, 'Richtig! Vom Alkohol Ethanol leitet sich das Ethanolat-Ion ab (Stoffklasse: Alkoholat-Ionen).')">
+            Ethanolat-Ion (Alkoholat-Ion)
+          </button>
+          <button class="opt-btn" onclick="checkMC('1-2', this, false, 'Falsch: Hydroxid-Ionen haben die Formel OH⁻.')">
+            Ethylhydroxid-Ion
+          </button>
+        </div>
+        <div class="feedback" id="fb-1-2"></div>
+      </div>
+
+      <!-- Aufgabe 1.3 (ehemals 3.2): Gleichgewichtsdynamik -->
+      <div class="task-box">
+        <h3>
+          <span>Aufgabe 1.3: Warum bleibt der pH-Wert der Ethanol-Lösung neutral (pH = 7)?</span>
+          <span class="tag task" id="badge-t13">Offen</span>
+        </h3>
+        <p>
+          Klicke oben in Kammer B mehrfach auf <em>„⚡ Proton abspalten“</em> und beobachte die Teilchen. Was geschieht mit den entstandenen Ethanolat- und Oxonium-Ionen?
+        </p>
+        <div class="option-grid">
+          <button class="opt-btn" onclick="checkMC('1-3', this, true, 'Perfekt! Die entstandenen Ethanolat-Ionen sind instabil und fangen die Oxonium-Ionen in der Rückreaktion rasch wieder ein, sodass dauerhaft keine freien H₃O⁺-Ionen verbleiben.')">
+            Die entstandenen Ethanolat-Ionen sind instabil und reagieren in der Rückreaktion mit H<sub>3</sub>O<sup>+</sup> sofort wieder zurück zu Ethanol und Wasser.
+          </button>
+          <button class="opt-btn" onclick="checkMC('1-3', this, false, 'Falsch: Das Ethanolat-Ion zerfällt nicht, sondern nimmt das Proton von H₃O⁺ wieder auf.')">
+            Die Ethanolat-Ionen zerfallen in Kohlenstoffdioxid und Wasserstoff.
+          </button>
+        </div>
+        <div class="feedback" id="fb-1-3"></div>
       </div>
     </div>
 
@@ -1004,8 +1081,10 @@
     <div class="card">
       <div class="card-header">
         <h2>Phase 2: Voraussetzung 1 – Bindungspolarität &amp; Elektronensog</h2>
-        <span class="tag">Submikroebene I</span>
+        <span class="tag">Teilchenebene</span>
       </div>
+
+      <div class="level-banner particle">⚛️ Teilchenebene: Molekülbau &amp; Ladungsverteilung im Edukt</div>
       <p>
         Damit ein H<sup>+</sup>-Ion (Proton) abgespalten werden kann, muss die <strong>O−H-Bindung</strong> stark polarisiert sein.
         Starte die <strong>Elektronensog-Animation</strong> und vergleiche beide Moleküle in der Valenzstrichformel sowie in der <strong>drehbaren 3D-Elektronendichtedarstellung</strong>!
@@ -1030,7 +1109,6 @@
           </button>
 
           <svg class="svg-stage" viewBox="0 0 365 245" id="svg-acetic">
-            <!-- Step indicator banner inside SVG -->
             <g id="pull-banner" opacity="0" style="transition: opacity 0.3s;">
               <rect x="14" y="8" width="337" height="28" rx="7" fill="#fef2f2" stroke="#fca5a5" />
               <text x="182" y="26" font-size="12.5" font-weight="700" fill="#b91c1c" text-anchor="middle">
@@ -1045,34 +1123,26 @@
 
             <!-- Static Bonds -->
             <g stroke="#1e293b" stroke-width="3" stroke-linecap="round">
-              <!-- Methyl C-H -->
               <line x1="90" y1="132" x2="40" y2="132" />
               <line x1="90" y1="132" x2="90" y2="82" />
               <line x1="90" y1="132" x2="90" y2="182" />
-              <!-- C-C -->
               <line x1="90" y1="132" x2="170" y2="132" />
-              <!-- C=O -->
               <line x1="166" y1="127" x2="208" y2="77" />
               <line x1="174" y1="134" x2="216" y2="84" />
-              <!-- C-O -->
               <line x1="170" y1="132" x2="214" y2="176" />
-              <!-- O-H bond (dynamic length/dash via JS) -->
               <line id="ac-oh-bond" x1="238" y1="182" x2="278" y2="182" stroke="#1e293b" stroke-width="3" />
             </g>
 
-            <!-- Lone pairs on O atoms (2 pairs each, cleanly positioned) -->
+            <!-- Lone pairs on O atoms (2 pairs each) -->
             <g stroke="#1e293b" stroke-width="2.6" stroke-linecap="round">
-              <!-- Carbonyl O (center 222, 72): two lone pairs top-left and right -->
               <line x1="204" y1="56" x2="219" y2="46" />
               <line x1="236" y1="62" x2="243" y2="79" />
-              <!-- Hydroxy O (center 225, 182): two lone pairs top and bottom -->
               <line x1="216" y1="162" x2="234" y2="162" />
               <line x1="216" y1="202" x2="234" y2="202" />
             </g>
 
-            <!-- Animated Electron Pull Pulses (JS driven) -->
+            <!-- Animated Electron Pull Pulses -->
             <g id="electron-pulses" opacity="0">
-              <!-- Guide arrows -->
               <path d="M276,168 L244,168" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="3,2" />
               <polygon points="241,168 248,164 248,172" fill="#dc2626" />
               <path d="M204,178 L174,148" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="3,2" />
@@ -1080,7 +1150,6 @@
               <path d="M162,115 L198,74" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="3,2" />
               <polygon points="201,71 193,74 199,79" fill="#dc2626" />
 
-              <!-- Moving glowing electron packets -->
               <circle id="ep-1" cx="275" cy="182" r="5.5" fill="#dc2626" />
               <circle id="ep-2" cx="215" cy="176" r="5.5" fill="#dc2626" />
               <circle id="ep-3" cx="172" cy="130" r="6" fill="#dc2626" />
@@ -1096,7 +1165,6 @@
               <text x="222" y="72" fill="#dc2626">O</text>
               <text x="225" y="182" fill="#dc2626">O</text>
 
-              <!-- Clickable H atoms for Hotspot task -->
               <g class="clickable-atom" onclick="selectHotspot('methyl')">
                 <circle class="ring" cx="90" cy="68" r="16" fill="transparent" stroke="transparent" />
               </g>
@@ -1105,7 +1173,6 @@
                 <text id="ac-h-text" x="292" y="182" fill="#1d4ed8">H</text>
               </g>
 
-              <!-- Partial charges -->
               <text x="249" y="50" font-size="13.5" fill="#dc2626">δ−</text>
               <text x="158" y="114" font-size="13.5" fill="#1d4ed8">δ+</text>
               <text x="243" y="203" font-size="13.5" fill="#dc2626">δ−</text>
@@ -1135,7 +1202,6 @@
               </text>
             </g>
 
-            <!-- Static Bonds -->
             <g stroke="#1e293b" stroke-width="3" stroke-linecap="round">
               <line x1="90" y1="132" x2="40" y2="132" />
               <line x1="90" y1="132" x2="90" y2="82" />
@@ -1147,13 +1213,12 @@
               <line x1="238" y1="182" x2="278" y2="182" />
             </g>
 
-            <!-- Lone pairs on Hydroxy O (2 pairs, top and bottom) -->
+            <!-- Lone pairs on Hydroxy O (2 pairs) -->
             <g stroke="#1e293b" stroke-width="2.6" stroke-linecap="round">
               <line x1="216" y1="162" x2="234" y2="162" />
               <line x1="216" y1="202" x2="234" y2="202" />
             </g>
 
-            <!-- Atoms -->
             <g font-family="sans-serif" font-weight="700" font-size="18" text-anchor="middle" dominant-baseline="central">
               <text x="27" y="132" fill="#1e293b">H</text>
               <text x="90" y="68" fill="#1e293b">H</text>
@@ -1211,14 +1276,14 @@
         </div>
       </div>
 
-      <!-- Interaktive Simulation: Protonen-Abspaltungs-Challenge -->
+      <!-- Interaktive Simulation: Protonen-Abspaltungs-Challenge in der Valenzstrichformel -->
       <div class="cleavage-arena">
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
-          <h3 style="margin:0; color:#1e3a8a; font-size:1.1rem;">⚡ Simulation: Spalte das Proton (H<sup>+</sup>) ab!</h3>
+          <h3 style="margin:0; color:#1e3a8a; font-size:1.1rem;">⚡ Simulation: Spalte das Proton (H<sup>+</sup>) in der Valenzstrichformel ab!</h3>
           <span class="tag task" id="badge-t21">0 / 2 Moleküle getestet</span>
         </div>
         <p style="margin:0 0 12px; font-size:0.93rem;">
-          Wähle ein Molekül aus und tippe schnell auf den Button (oder direkt auf das <strong>H-Atom</strong>), um die O−H-Bindung zu spalten und das Proton auf ein Wasser-Molekül zu übertragen. Spüre den Unterschied in der Bindungsstärke!
+          Wähle ein Molekül aus und tippe schnell auf den Button (oder direkt in die Valenzstrichformel), um die O−H-Bindung zu spalten und das Proton auf ein Wasser-Molekül zu übertragen. Beobachte dabei auch die <strong>nicht-bindenden Elektronenpaare</strong>!
         </p>
 
         <div class="cleavage-tabs">
@@ -1226,7 +1291,7 @@
           <button class="btn secondary" id="clev-tab-alc" onclick="selectCleavageTarget('alc')">2. Ethanol + H<sub>2</sub>O (schwach polarisiert)</button>
         </div>
 
-        <canvas class="cleavage-canvas" id="cleavageCanvas" width="680" height="195" onclick="tapCleavage()"></canvas>
+        <canvas class="cleavage-canvas" id="cleavageCanvas" width="720" height="230" onclick="tapCleavage()"></canvas>
 
         <div class="cleavage-controls">
           <div class="progress-track">
@@ -1263,7 +1328,7 @@
           <button class="opt-btn" onclick="checkMC('2-3', this, false, 'Falsch: Die drei C−H-Bindungen im Methylrest sind weitgehend unpolar.')">
             Weil die drei C−H-Bindungen im Methylrest Elektronen an das H-Atom abgeben.
           </button>
-          <button class="opt-btn" onclick="checkMC('2-3', this, true, 'Genau! Das elektronegative O-Atom der Carbonylgruppe zieht Elektronen über die Bindungen hinweg aus der O−H-Bindung ab und polarisiert/schwächt sie dadurch stark.')">
+          <button class="opt-btn" onclick="checkMC('2-3', this, true, 'Genau! Das elektronegative O-Atom der Carbonylgruppe zieht Elektronen über die Bindungen hinweg aus der O−H-Bindung ab und polarisiert sie dadurch stark.')">
             Weil das O-Atom der benachbarten Carbonylgruppe (C=O) Elektronendichte aus der O−H-Bindung anzieht und diese dadurch stärker polarisiert.
           </button>
           <button class="opt-btn" onclick="checkMC('2-3', this, false, 'Falsch: Das Sauerstoffatom der Hydroxygruppe hat in beiden Molekülen dieselbe Elektronegativität (3,5).')">
@@ -1276,124 +1341,22 @@
 
     <div class="nav-footer">
       <button class="btn secondary" onclick="goPhase(1)">← Zurück</button>
-      <button class="btn" onclick="goPhase(3)">Weiter zu Phase 3: Gleichgewicht →</button>
+      <button class="btn" onclick="goPhase(3)">Weiter zu Phase 3: Anion &amp; Mesomerie →</button>
     </div>
   </section>
 
-  <!-- ==================== PHASE 3 ==================== -->
+  <!-- ==================== PHASE 3 (ehemals Phase 4) ==================== -->
   <section class="phase-section" id="phase-3">
     <div class="card">
       <div class="card-header">
-        <h2>Phase 3: Reaktionsgleichung, Nomenklatur &amp; Gleichgewicht</h2>
-        <span class="tag">Submikroebene II</span>
-      </div>
-      <p>
-        Bei der Säure-Base-Reaktion wird ein Proton (H<sup>+</sup>) auf ein Wasser-Molekül übertragen. Beobachte das <strong>dynamische Gleichgewicht</strong> in beiden Lösungen!
-      </p>
-
-      <div class="grid-2">
-        <!-- Kammer A: Ethansäure -->
-        <div class="eq-box">
-          <div style="display:flex; justify-content:space-between; align-items:center;">
-            <strong>A: Ethansäure + Wasser</strong>
-            <span class="ph-badge acidic" id="live-ph-a">pH = 2 (sauer)</span>
-          </div>
-          <p style="font-size:0.92rem; margin:8px 0;">
-            CH<sub>3</sub>COOH + H<sub>2</sub>O &nbsp;⇌&nbsp; CH<sub>3</sub>COO<sup>−</sup> + H<sub>3</sub>O<sup>+</sup>
-          </p>
-          <canvas class="sim-canvas" id="canvas-acid" width="440" height="190"></canvas>
-          <small style="color:var(--text-muted);">
-            <span style="color:#dc2626; font-weight:700;">●</span> CH<sub>3</sub>COOH &nbsp;
-            <span style="color:#f59e0b; font-weight:700;">●</span> CH<sub>3</sub>COO<sup>−</sup> (Ethanoat-Ion) &nbsp;
-            <span style="color:#1d4ed8; font-weight:700;">●</span> H<sub>3</sub>O<sup>+</sup>
-          </small>
-        </div>
-
-        <!-- Kammer B: Ethanol -->
-        <div class="eq-box">
-          <div style="display:flex; justify-content:space-between; align-items:center;">
-            <strong>B: Ethanol + Wasser</strong>
-            <span class="ph-badge neutral" id="live-ph-b">pH = 7 (neutral)</span>
-          </div>
-          <p style="font-size:0.92rem; margin:8px 0;">
-            CH<sub>3</sub>CH<sub>2</sub>OH + H<sub>2</sub>O
-            <span class="eq-arrow-stack" title="Gleichgewicht liegt fast vollständig auf der Seite der Edukte">
-              <span style="font-size:0.75rem;">⇀</span>
-              <span style="font-size:1.05rem;">↽</span>
-            </span>
-            CH<sub>3</sub>CH<sub>2</sub>O<sup>−</sup> + H<sub>3</sub>O<sup>+</sup>
-          </p>
-          <canvas class="sim-canvas" id="canvas-alc" width="440" height="190"></canvas>
-          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
-            <small style="color:var(--text-muted);">
-              <span style="color:#16a34a; font-weight:700;">●</span> CH<sub>3</sub>CH<sub>2</sub>OH &nbsp;
-              <span style="color:#9333ea; font-weight:700;">●</span> CH<sub>3</sub>CH<sub>2</sub>O<sup>−</sup> (Ethanolat-Ion)
-            </small>
-            <button class="btn secondary" style="padding:5px 10px; font-size:0.8rem; min-height:32px;" onclick="forceEthanolDissociation()">⚡ Protonenabspaltung auslösen</button>
-          </div>
-        </div>
+        <h2>Phase 3: Voraussetzung 2 – Stabilität des Anions &amp; Mesomerie</h2>
+        <span class="tag">Teilchenebene</span>
       </div>
 
-      <!-- Aufgabe 3.1: Nomenklatur -->
-      <div class="task-box">
-        <h3>
-          <span>Aufgabe 3.1: Nomenklatur der entstehenden Anionen</span>
-          <span class="tag task" id="badge-t31">Offen</span>
-        </h3>
-        <p>
-          Das Anion der Ethansäure heißt <strong>Ethanoat-Ion</strong> (Stoffklasse: <em>Carboxylat-Ionen</em>). Analog dazu benennt man die deprotonierten Ionen von Alkanolen als <strong>Alkoholat-Ionen</strong>. Wie heißt demnach das Ion CH<sub>3</sub>−CH<sub>2</sub>−O<sup>⊖</sup>?
-        </p>
-        <div class="option-grid">
-          <button class="opt-btn" onclick="checkMC('3-1', this, false, 'Falsch: Die Endung -oat gehört zu den Carboxylat-Ionen (Anionen der Carbonsäuren).')">
-            Ethanoat-Ion (Carboxylat-Ion)
-          </button>
-          <button class="opt-btn" onclick="checkMC('3-1', this, true, 'Richtig! Vom Alkohol Ethanol leitet sich das Ethanolat-Ion ab (Stoffklasse: Alkoholat-Ionen).')">
-            Ethanolat-Ion (Alkoholat-Ion)
-          </button>
-          <button class="opt-btn" onclick="checkMC('3-1', this, false, 'Falsch: Hydroxid-Ionen haben die Formel OH⁻.')">
-            Ethylhydroxid-Ion
-          </button>
-        </div>
-        <div class="feedback" id="fb-3-1"></div>
-      </div>
-
-      <!-- Aufgabe 3.2: Gleichgewichtsdynamik -->
-      <div class="task-box">
-        <h3>
-          <span>Aufgabe 3.2: Warum bleibt der pH-Wert der Ethanol-Lösung neutral (pH = 7)?</span>
-          <span class="tag task" id="badge-t32">Offen</span>
-        </h3>
-        <p>
-          Klicke oben in Kammer B auf <em>„⚡ Protonenabspaltung auslösen“</em> und beobachte die Teilchen. Was geschieht?
-        </p>
-        <div class="option-grid">
-          <button class="opt-btn" onclick="checkMC('3-2', this, true, 'Perfekt! Das gebildete Ethanolat-Ion ist extrem instabil/energiereich und fängt sofort wieder ein Proton von einem Oxonium-Ion ein (Rückreaktion).')">
-            Das entstandene Ethanolat-Ion ist instabil und reagiert sofort in der Rückreaktion mit H<sub>3</sub>O<sup>+</sup> zurück zu Ethanol und Wasser.
-          </button>
-          <button class="opt-btn" onclick="checkMC('3-2', this, false, 'Falsch: Das Ethanolat-Ion zerfällt nicht, sondern nimmt sofort wieder ein H⁺-Ion auf.')">
-            Das Ethanolat-Ion zerfällt in Kohlenstoffdioxid und Wasserstoff.
-          </button>
-        </div>
-        <div class="feedback" id="fb-3-2"></div>
-      </div>
-    </div>
-
-    <div class="nav-footer">
-      <button class="btn secondary" onclick="goPhase(2)">← Zurück</button>
-      <button class="btn" onclick="goPhase(4)">Weiter zu Phase 4: Anion &amp; Mesomerie →</button>
-    </div>
-  </section>
-
-  <!-- ==================== PHASE 4 ==================== -->
-  <section class="phase-section" id="phase-4">
-    <div class="card">
-      <div class="card-header">
-        <h2>Phase 4: Voraussetzung 2 – Stabilität des Anions &amp; Mesomerie</h2>
-        <span class="tag">Submikroebene III</span>
-      </div>
+      <div class="level-banner particle">⚛️ Teilchenebene: Ladungsverteilung &amp; Mesomerie im Produkt-Ion</div>
       <p>
         Warum ist das <strong>Ethanoat-Ion</strong> so viel stabiler als das <strong>Ethanolat-Ion</strong>?
-        Drehe beide Anionen im <strong>3D-Elektronendichtemodell</strong> und teste anschließend in der <strong>Mesomerie-Werkstatt</strong>, ob sich die negative Ladung verteilen (delokalisieren) lässt!
+        Drehe beide Anionen im <strong>3D-Elektronendichtemodell</strong> und teste anschließend in der <strong>Mesomerie-Werkstatt</strong>, ob sich die negative Ladung über mehrere Atome verteilen (delokalisieren) lässt!
       </p>
 
       <!-- 3D Räumlich drehbare Elektronendichtedarstellungen (Anionen) -->
@@ -1444,99 +1407,110 @@
         <!-- Tab 1: Ethanoat-Ion -->
         <div id="panel-meso-ac">
           <p style="margin-top:0;">
-            <strong>Klicke auf das blau markierte freie Elektronenpaar</strong> am einfach gebundenen Sauerstoffatom (O<sup>⊖</sup>), um es in die C−O-Bindung zu klappen!
+            <strong>Klicke auf das blau markierte freie Elektronenpaar</strong> am einfach gebundenen Sauerstoffatom (O<sup>⊖</sup>) oder auf den Button darunter, um es in die C−O-Bindung zu klappen!
           </p>
           <div class="grid-2" style="align-items:center;">
             <div style="background:#fff; border:1px solid var(--border); border-radius:10px; padding:12px; text-align:center;">
-              <svg width="100%" height="225" viewBox="0 0 440 225">
+              <svg width="100%" height="235" viewBox="0 0 475 235">
                 <!-- Grenzformel I -->
-                <text x="102" y="22" font-size="13" font-weight="700" fill="#475569" text-anchor="middle">Grenzformel I</text>
-                <text x="32" y="114" font-size="17" font-weight="700">H<sub>3</sub>C</text>
-                <!-- SVG tspan for subscript -->
-                <rect x="18" y="95" width="48" height="24" fill="#fff" />
-                <text x="42" y="114" font-size="17" font-weight="700" text-anchor="middle">H<tspan dy="4" font-size="12">3</tspan><tspan dy="-4">C</tspan></text>
+                <text x="108" y="22" font-size="13.5" font-weight="700" fill="#475569" text-anchor="middle">Grenzformel I</text>
 
-                <line x1="68" y1="108" x2="105" y2="108" stroke="#1e293b" stroke-width="3" />
-                <text x="114" y="114" font-size="18" font-weight="700" text-anchor="middle">C</text>
+                <!-- H3C -->
+                <text x="38" y="116" font-size="17" font-weight="700" text-anchor="middle">H<tspan dy="4" font-size="12">3</tspan><tspan dy="-4">C</tspan></text>
+                <line x1="65" y1="110" x2="104" y2="110" stroke="#1e293b" stroke-width="3" />
+                <text x="114" y="116" font-size="18" font-weight="700" text-anchor="middle">C</text>
 
                 <!-- C=O top -->
-                <line x1="122" y1="98" x2="152" y2="66" stroke="#1e293b" stroke-width="3" />
-                <line x1="128" y1="104" x2="158" y2="72" stroke="#1e293b" stroke-width="3" />
-                <text x="166" y="66" font-size="18" font-weight="700" text-anchor="middle">O</text>
+                <line x1="122" y1="98" x2="154" y2="66" stroke="#1e293b" stroke-width="3" />
+                <line x1="128" y1="104" x2="160" y2="72" stroke="#1e293b" stroke-width="3" />
+                <text x="169" y="66" font-size="18" font-weight="700" text-anchor="middle">O</text>
                 <!-- 2 lone pairs on top neutral O -->
-                <line x1="152" y1="46" x2="167" y2="41" stroke="#1e293b" stroke-width="2.6" stroke-linecap="round" />
-                <line x1="178" y1="53" x2="184" y2="68" stroke="#1e293b" stroke-width="2.6" stroke-linecap="round" />
+                <line x1="154" y1="45" x2="170" y2="39" stroke="#1e293b" stroke-width="2.6" stroke-linecap="round" />
+                <line x1="183" y1="53" x2="189" y2="69" stroke="#1e293b" stroke-width="2.6" stroke-linecap="round" />
 
                 <!-- C-O bottom -->
-                <line x1="124" y1="118" x2="154" y2="152" stroke="#1e293b" stroke-width="3" />
-                <text x="166" y="164" font-size="18" font-weight="700" fill="#dc2626" text-anchor="middle">O</text>
-                <text x="184" y="148" font-size="15" font-weight="700" fill="#dc2626">⊖</text>
-                <!-- 3 lone pairs on bottom O- (bottom, right, and clickable top-left) -->
-                <line x1="157" y1="178" x2="175" y2="178" stroke="#1e293b" stroke-width="2.6" stroke-linecap="round" />
-                <line x1="181" y1="155" x2="181" y2="173" stroke="#1e293b" stroke-width="2.6" stroke-linecap="round" />
-                <!-- Clickable lone pair -->
-                <g style="cursor:pointer;" onclick="triggerMesomerie()">
-                  <rect x="138" y="142" width="26" height="22" rx="6" fill="rgba(29,78,216,0.16)" stroke="#1d4ed8" stroke-width="2" />
-                  <line x1="145" y1="158" x2="157" y2="147" stroke="#1d4ed8" stroke-width="3.5" stroke-linecap="round" />
+                <line x1="124" y1="120" x2="156" y2="154" stroke="#1e293b" stroke-width="3" />
+                <text x="169" y="167" font-size="18" font-weight="700" fill="#dc2626" text-anchor="middle">O</text>
+                <text x="188" y="150" font-size="15" font-weight="700" fill="#dc2626">⊖</text>
+                <!-- 3 lone pairs on bottom O- -->
+                <line x1="160" y1="183" x2="178" y2="183" stroke="#1e293b" stroke-width="2.6" stroke-linecap="round" />
+                <line x1="186" y1="158" x2="186" y2="176" stroke="#1e293b" stroke-width="2.6" stroke-linecap="round" />
+
+                <!-- Clickable lone pair (generous hit area) -->
+                <g style="cursor:pointer;" onclick="toggleMesomerie()">
+                  <rect x="136" y="138" width="34" height="32" rx="8" fill="rgba(29,78,216,0.18)" stroke="#1d4ed8" stroke-width="2" />
+                  <line x1="147" y1="160" x2="160" y2="147" stroke="#1d4ed8" stroke-width="3.8" stroke-linecap="round" />
                 </g>
 
                 <!-- Curved electron arrows (appear on click) -->
                 <g id="meso-arrows" opacity="0" style="transition: opacity 0.35s;">
-                  <path d="M146,147 Q131,138 141,129" fill="none" stroke="#1d4ed8" stroke-width="2.5" />
-                  <polygon points="143,126 136,128 142,133" fill="#1d4ed8" />
-                  <path d="M146,86 Q165,88 172,76" fill="none" stroke="#dc2626" stroke-width="2.5" />
-                  <polygon points="174,73 167,76 173,80" fill="#dc2626" />
+                  <!-- Lone pair -> C-O bond -->
+                  <path d="M148,148 Q131,138 142,127" fill="none" stroke="#1d4ed8" stroke-width="2.6" />
+                  <polygon points="145,124 137,126 143,132" fill="#1d4ed8" />
+                  <!-- C=O pi bond -> upper O -->
+                  <path d="M148,86 Q168,89 176,75" fill="none" stroke="#dc2626" stroke-width="2.6" />
+                  <polygon points="178,72 171,75 177,80" fill="#dc2626" />
                 </g>
 
                 <!-- Mesomerie-Pfeil & Grenzformel II -->
                 <g id="meso-gf2" opacity="0.16" style="transition: opacity 0.4s;">
-                  <text x="224" y="114" font-size="26" font-weight="700" fill="#1d4ed8" text-anchor="middle">⟷</text>
-                  <text x="336" y="22" font-size="13" font-weight="700" fill="#15803d" text-anchor="middle">Grenzformel II</text>
+                  <text x="234" y="116" font-size="28" font-weight="700" fill="#1d4ed8" text-anchor="middle">⟷</text>
+                  <text x="364" y="22" font-size="13.5" font-weight="700" fill="#15803d" text-anchor="middle">Grenzformel II</text>
 
-                  <text x="274" y="114" font-size="17" font-weight="700" text-anchor="middle">H<tspan dy="4" font-size="12">3</tspan><tspan dy="-4">C</tspan></text>
-                  <line x1="300" y1="108" x2="337" y2="108" stroke="#1e293b" stroke-width="3" />
-                  <text x="346" y="114" font-size="18" font-weight="700" text-anchor="middle">C</text>
+                  <text x="292" y="116" font-size="17" font-weight="700" text-anchor="middle">H<tspan dy="4" font-size="12">3</tspan><tspan dy="-4">C</tspan></text>
+                  <line x1="319" y1="110" x2="358" y2="110" stroke="#1e293b" stroke-width="3" />
+                  <text x="368" y="116" font-size="18" font-weight="700" text-anchor="middle">C</text>
 
-                  <!-- C-O top (now single bond, 3 lone pairs) -->
-                  <line x1="356" y1="98" x2="386" y2="66" stroke="#1e293b" stroke-width="3" />
-                  <text x="398" y="66" font-size="18" font-weight="700" fill="#dc2626" text-anchor="middle">O</text>
-                  <text x="416" y="50" font-size="15" font-weight="700" fill="#dc2626">⊖</text>
-                  <line x1="389" y1="45" x2="407" y2="45" stroke="#1e293b" stroke-width="2.6" stroke-linecap="round" />
-                  <line x1="413" y1="57" x2="413" y2="75" stroke="#1e293b" stroke-width="2.6" stroke-linecap="round" />
-                  <line x1="377" y1="55" x2="389" y2="66" stroke="#1e293b" stroke-width="2.6" stroke-linecap="round" />
+                  <!-- C-O top (single bond, 3 lone pairs cleanly placed top, left, right) -->
+                  <line x1="378" y1="98" x2="410" y2="66" stroke="#1e293b" stroke-width="3" />
+                  <text x="423" y="66" font-size="18" font-weight="700" fill="#dc2626" text-anchor="middle">O</text>
+                  <text x="442" y="48" font-size="15" font-weight="700" fill="#dc2626">⊖</text>
+                  <!-- Top lone pair -->
+                  <line x1="414" y1="43" x2="432" y2="43" stroke="#1e293b" stroke-width="2.6" stroke-linecap="round" />
+                  <!-- Right lone pair -->
+                  <line x1="440" y1="54" x2="440" y2="72" stroke="#1e293b" stroke-width="2.6" stroke-linecap="round" />
+                  <!-- Left lone pair -->
+                  <line x1="404" y1="53" x2="404" y2="71" stroke="#1e293b" stroke-width="2.6" stroke-linecap="round" />
 
-                  <!-- C=O bottom (now double bond, 2 lone pairs) -->
-                  <line x1="354" y1="118" x2="384" y2="152" stroke="#1e293b" stroke-width="3" />
-                  <line x1="360" y1="112" x2="390" y2="146" stroke="#1e293b" stroke-width="3" />
-                  <text x="398" y="164" font-size="18" font-weight="700" text-anchor="middle">O</text>
-                  <line x1="385" y1="179" x2="401" y2="184" stroke="#1e293b" stroke-width="2.6" stroke-linecap="round" />
-                  <line x1="412" y1="154" x2="417" y2="170" stroke="#1e293b" stroke-width="2.6" stroke-linecap="round" />
+                  <!-- C=O bottom (double bond, 2 lone pairs cleanly placed bottom & right) -->
+                  <line x1="376" y1="120" x2="408" y2="154" stroke="#1e293b" stroke-width="3" />
+                  <line x1="382" y1="114" x2="414" y2="148" stroke="#1e293b" stroke-width="3" />
+                  <text x="423" y="167" font-size="18" font-weight="700" text-anchor="middle">O</text>
+                  <line x1="412" y1="184" x2="429" y2="189" stroke="#1e293b" stroke-width="2.6" stroke-linecap="round" />
+                  <line x1="439" y1="158" x2="445" y2="174" stroke="#1e293b" stroke-width="2.6" stroke-linecap="round" />
                 </g>
               </svg>
+
+              <button class="btn" id="mesoActionBtn" onclick="toggleMesomerie()" style="margin-top:6px;">
+                🔄 Elektronenpaar umklappen (Grenzformel II zeigen)
+              </button>
             </div>
 
             <!-- Energiediagramm -->
             <div style="background:#fff; border:1px solid var(--border); border-radius:10px; padding:14px;">
               <strong style="font-size:0.95rem;">Energiediagramm (Mesomeriestabilisierung)</strong>
-              <svg width="100%" height="185" viewBox="0 0 320 185">
-                <line x1="35" y1="165" x2="35" y2="15" stroke="#64748b" stroke-width="2" />
+              <svg width="100%" height="190" viewBox="0 0 320 190">
+                <line x1="35" y1="170" x2="35" y2="15" stroke="#64748b" stroke-width="2" />
                 <polygon points="35,10 30,20 40,20" fill="#64748b" />
-                <text x="12" y="90" font-size="12" font-weight="700" fill="#475569" transform="rotate(-90 12,90)">Energie E</text>
+                <text x="12" y="92" font-size="12" font-weight="700" fill="#475569" transform="rotate(-90 12,92)">Energie E</text>
 
                 <line x1="55" y1="45" x2="175" y2="45" stroke="#94a3b8" stroke-width="3" stroke-dasharray="4,4" />
                 <text x="115" y="35" font-size="11" fill="#64748b" text-anchor="middle">theoretische Grenzformeln</text>
 
                 <g id="energy-drop" opacity="0.2" style="transition: opacity 0.4s;">
-                  <line x1="185" y1="120" x2="305" y2="120" stroke="#15803d" stroke-width="4" />
-                  <text x="245" y="138" font-size="11.5" font-weight="700" fill="#15803d" text-anchor="middle">reales Ethanoat-Ion</text>
-                  <text x="245" y="153" font-size="10.5" fill="#15803d" text-anchor="middle">(delokalisiert &amp; stabil)</text>
+                  <line x1="185" y1="125" x2="305" y2="125" stroke="#15803d" stroke-width="4" />
+                  <text x="245" y="143" font-size="11.5" font-weight="700" fill="#15803d" text-anchor="middle">reales Ethanoat-Ion</text>
+                  <text x="245" y="158" font-size="10.5" fill="#15803d" text-anchor="middle">(delokalisiert &amp; stabil)</text>
 
-                  <line x1="170" y1="48" x2="170" y2="117" stroke="#1d4ed8" stroke-width="2.5" />
-                  <polygon points="170,120 165,111 175,111" fill="#1d4ed8" />
-                  <text x="162" y="85" font-size="11" font-weight="700" fill="#1d4ed8" text-anchor="end">Mesomerie-</text>
-                  <text x="162" y="98" font-size="11" font-weight="700" fill="#1d4ed8" text-anchor="end">energie</text>
+                  <line x1="170" y1="48" x2="170" y2="122" stroke="#1d4ed8" stroke-width="2.5" />
+                  <polygon points="170,125 165,116 175,116" fill="#1d4ed8" />
+                  <text x="162" y="88" font-size="11" font-weight="700" fill="#1d4ed8" text-anchor="end">Mesomerie-</text>
+                  <text x="162" y="101" font-size="11" font-weight="700" fill="#1d4ed8" text-anchor="end">energie</text>
                 </g>
               </svg>
+              <div id="mesoSuccessNote" style="display:none; font-size:0.88rem; color:#14532d; background:#f0fdf4; padding:8px 10px; border-radius:8px; border:1px solid #bbf7d0;">
+                ✓ Durch die Delokalisierung über beide O-Atome sinkt die Energie des Ethanoat-Ions deutlich ab!
+              </div>
             </div>
           </div>
         </div>
@@ -1544,37 +1518,44 @@
         <!-- Tab 2: Ethanolat-Ion -->
         <div id="panel-meso-et" style="display:none;">
           <p style="margin-top:0;">
-            <strong>Teste das Ethanolat-Ion:</strong> Klicke auf das blau markierte freie Elektronenpaar des O<sup>⊖</sup>-Atoms, um zu versuchen, eine Doppelbindung zum benachbarten CH<sub>2</sub>-Kohlenstoffatom auszubilden!
+            <strong>Teste das Ethanolat-Ion:</strong> Klicke auf das blau markierte freie Elektronenpaar des O<sup>⊖</sup>-Atoms (oder auf den Button darunter), um zu versuchen, eine Doppelbindung zum benachbarten CH<sub>2</sub>-Kohlenstoffatom auszubilden!
           </p>
           <div style="background:#fff; border:1px solid var(--border); border-radius:10px; padding:14px; text-align:center;">
-            <svg width="100%" height="195" viewBox="0 0 400 195">
-              <text x="52" y="105" font-size="18" font-weight="700" text-anchor="middle">H<tspan dy="4" font-size="12">3</tspan><tspan dy="-4">C</tspan></text>
-              <line x1="82" y1="100" x2="135" y2="100" stroke="#1e293b" stroke-width="3" />
+            <svg width="100%" height="205" viewBox="0 0 420 205">
+              <text x="54" y="108" font-size="18" font-weight="700" text-anchor="middle">H<tspan dy="4" font-size="12">3</tspan><tspan dy="-4">C</tspan></text>
+              <line x1="84" y1="103" x2="138" y2="103" stroke="#1e293b" stroke-width="3" />
               <!-- CH2 carbon -->
-              <circle id="octet-c-highlight" cx="150" cy="100" r="22" fill="transparent" stroke="transparent" stroke-width="3" />
-              <text x="150" y="106" font-size="19" font-weight="700" text-anchor="middle">C</text>
-              <line x1="150" y1="82" x2="150" y2="48" stroke="#1e293b" stroke-width="3" />
-              <text x="150" y="38" font-size="17" font-weight="700" text-anchor="middle">H</text>
-              <line x1="150" y1="118" x2="150" y2="152" stroke="#1e293b" stroke-width="3" />
-              <text x="150" y="168" font-size="17" font-weight="700" text-anchor="middle">H</text>
+              <circle id="octet-c-highlight" cx="155" cy="103" r="23" fill="transparent" stroke="transparent" stroke-width="3" />
+              <text x="155" y="109" font-size="19" font-weight="700" text-anchor="middle">C</text>
+              <line x1="155" y1="84" x2="155" y2="48" stroke="#1e293b" stroke-width="3" />
+              <text x="155" y="37" font-size="17" font-weight="700" text-anchor="middle">H</text>
+              <line x1="155" y1="122" x2="155" y2="158" stroke="#1e293b" stroke-width="3" />
+              <text x="155" y="175" font-size="17" font-weight="700" text-anchor="middle">H</text>
 
               <!-- C-O -->
-              <line x1="168" y1="100" x2="225" y2="100" stroke="#1e293b" stroke-width="3" />
-              <text x="242" y="106" font-size="19" font-weight="700" fill="#dc2626" text-anchor="middle">O</text>
-              <text x="260" y="90" font-size="16" font-weight="700" fill="#dc2626">⊖</text>
-              <!-- 3 Lone pairs cleanly around O (top, right, bottom) -->
-              <line x1="233" y1="80" x2="251" y2="80" stroke="#1e293b" stroke-width="2.6" stroke-linecap="round" />
-              <line x1="258" y1="91" x2="258" y2="109" stroke="#1e293b" stroke-width="2.6" stroke-linecap="round" />
-              <line x1="233" y1="120" x2="251" y2="120" stroke="#1e293b" stroke-width="2.6" stroke-linecap="round" />
+              <line x1="173" y1="103" x2="232" y2="103" stroke="#1e293b" stroke-width="3" />
+              <!-- Attempted second bond (red dashed, hidden initially) -->
+              <line id="octet-bad-bond" x1="173" y1="95" x2="232" y2="95" stroke="#dc2626" stroke-width="3" stroke-dasharray="4,3" opacity="0" />
 
-              <!-- Clickable lone pair -->
+              <text x="250" y="109" font-size="19" font-weight="700" fill="#dc2626" text-anchor="middle">O</text>
+              <text x="269" y="92" font-size="16" font-weight="700" fill="#dc2626">⊖</text>
+              <!-- 3 Lone pairs cleanly around O (top, right, bottom) -->
+              <line x1="268" y1="94" x2="268" y2="112" stroke="#1e293b" stroke-width="2.6" stroke-linecap="round" />
+              <line x1="241" y1="125" x2="259" y2="125" stroke="#1e293b" stroke-width="2.6" stroke-linecap="round" />
+
+              <!-- Clickable top lone pair -->
               <g style="cursor:pointer;" onclick="triggerOctetViolation()">
-                <rect x="230" y="68" width="24" height="20" rx="5" fill="rgba(29,78,216,0.16)" stroke="#1d4ed8" stroke-width="2" />
-                <line x1="234" y1="78" x2="250" y2="78" stroke="#1d4ed8" stroke-width="3.5" stroke-linecap="round" />
+                <rect x="234" y="68" width="32" height="24" rx="6" fill="rgba(29,78,216,0.18)" stroke="#1d4ed8" stroke-width="2" />
+                <line x1="241" y1="80" x2="259" y2="80" stroke="#1d4ed8" stroke-width="3.6" stroke-linecap="round" />
               </g>
 
-              <text x="332" y="105" font-size="14" font-weight="700" fill="#991b1b" text-anchor="middle">→ Keine Mesomerie!</text>
+              <text x="348" y="108" font-size="14" font-weight="700" fill="#991b1b" text-anchor="middle">→ Keine Mesomerie!</text>
             </svg>
+
+            <div style="margin-bottom:8px;">
+              <button class="btn acid" onclick="triggerOctetViolation()">⚡ Elektronenpaar in C−O-Bindung klappen</button>
+            </div>
+
             <div class="alert-octet" id="octetAlert">
               ⛔ <strong>Nicht möglich! Oktettregel verletzt!</strong><br />
               Das benachbarte C-Atom hat bereits vier Einfachbindungen (8 Valenzelektronen). Mit einer zusätzlichen Doppelbindung hätte es <strong>10 Valenzelektronen</strong>. Deshalb bleibt die negative Ladung lokal am O-Atom, das Ethanolat-Ion ist energiereich (instabil) und reagiert sofort zurück!
@@ -1583,38 +1564,38 @@
         </div>
       </div>
 
-      <!-- Aufgabe 4.1 -->
+      <!-- Aufgabe 3.1 (ehemals 4.1) -->
       <div class="task-box">
         <h3>
-          <span>Aufgabe 4.1: Mesomerie-Check – Welche Aussage ist fachlich korrekt?</span>
-          <span class="tag task" id="badge-t41">Offen</span>
+          <span>Aufgabe 3.1: Mesomerie-Check – Welche Aussage ist fachlich korrekt?</span>
+          <span class="tag task" id="badge-t31">Offen</span>
         </h3>
         <div class="option-grid">
-          <button class="opt-btn" onclick="checkMC('4-1', this, false, 'Falsch: Zwischen den mesomeren Grenzformeln schwingt nichts hin und her – das reale Ion ist ein energieärmerer Zwischenzustand mit delokalisierter Ladung.')">
+          <button class="opt-btn" onclick="checkMC('3-1', this, false, 'Falsch: Zwischen den mesomeren Grenzformeln schwingt nichts hin und her – das reale Ion ist ein energieärmerer Zwischenzustand mit delokalisierter Ladung.')">
             Beim Ethanoat-Ion wechseln die Elektronen ständig zwischen beiden O-Atomen hin und her, wodurch es wärmer wird.
           </button>
-          <button class="opt-btn" onclick="checkMC('4-1', this, true, 'Richtig! Je stärker die negative Ladung über mehrere Atome delokalisiert ist, desto energieärmer und stabiler ist das Anion.')">
+          <button class="opt-btn" onclick="checkMC('3-1', this, true, 'Richtig! Je stärker die negative Ladung über mehrere Atome delokalisiert ist, desto energieärmer und stabiler ist das Anion.')">
             Durch die Mesomeriestabilisierung wird die negative Ladung über beide O-Atome delokalisiert und die Energie des Ethanoat-Ions abgesenkt.
           </button>
-          <button class="opt-btn" onclick="checkMC('4-1', this, false, 'Falsch: Beim Ethanolat-Ion verbietet die Oktettregel am benachbarten C-Atom eine Delokalisierung.')">
+          <button class="opt-btn" onclick="checkMC('3-1', this, false, 'Falsch: Beim Ethanolat-Ion verbietet die Oktettregel am benachbarten C-Atom eine Delokalisierung.')">
             Auch beim Ethanolat-Ion ist Mesomeriestabilisierung möglich, wenn man ein H-Atom abspaltet.
           </button>
         </div>
-        <div class="feedback" id="fb-4-1"></div>
+        <div class="feedback" id="fb-3-1"></div>
       </div>
     </div>
 
     <div class="nav-footer">
-      <button class="btn secondary" onclick="goPhase(3)">← Zurück</button>
-      <button class="btn" onclick="goPhase(5)">Weiter zu Phase 5: Hefteintrag &amp; Exkurs →</button>
+      <button class="btn secondary" onclick="goPhase(2)">← Zurück</button>
+      <button class="btn" onclick="goPhase(4)">Weiter zu Phase 4: Hefteintrag &amp; Exkurs →</button>
     </div>
   </section>
 
-  <!-- ==================== PHASE 5 ==================== -->
-  <section class="phase-section" id="phase-5">
+  <!-- ==================== PHASE 4 (ehemals Phase 5) ==================== -->
+  <section class="phase-section" id="phase-4">
     <div class="card">
       <div class="card-header">
-        <h2>Phase 5: Zusammenfassung &amp; Hefteintrag sichern</h2>
+        <h2>Phase 4: Zusammenfassung &amp; Hefteintrag sichern</h2>
         <span class="tag">Ergebnissicherung</span>
       </div>
       <p>
@@ -1654,17 +1635,16 @@
       <div style="margin-top:14px; display:flex; flex-wrap:wrap; gap:10px;">
         <button class="btn" onclick="checkCloze()">✔ Lückentext überprüfen</button>
         <button class="btn secondary" onclick="resetCloze()">↺ Lücken leeren</button>
-        <button class="btn secondary teacher-only" onclick="solveClozeTeacher()">👩‍🏫 Musterlösung &amp; Hefteintrag einblenden</button>
       </div>
-      <div class="feedback" id="fb-5-1"></div>
+      <div class="feedback" id="fb-4-1"></div>
 
       <!-- Fertiger Hefteintrag -->
       <div class="notebook-sheet" id="notebookSheet" style="display:none;">
         <h3>Hefteintrag: Vergleich der Acidität von Alkohol- und Carbonsäure-Molekülen</h3>
         <p>
-          <strong>Versuch:</strong> In zwei Reagenzgläser wird Ethansäure- und Ethanol-Lösung gleicher Konzentration gegeben und Universalindikator zugetropft.<br />
+          <strong>Stoffebene (Versuch):</strong> In zwei Reagenzgläser wird Ethansäure- und Ethanol-Lösung gleicher Konzentration gegeben und Universalindikator zugetropft.<br />
           <strong>Beobachtung:</strong> Ethansäure-Lösung: rot (pH = 2) &nbsp;|&nbsp; Ethanol-Lösung: grün (pH = 7)<br />
-          <strong>Erklärung:</strong> Ethansäure-Moleküle reagieren als Säure mit Wasser-Molekülen; Ethanol-Moleküle reagieren nicht bzw. kaum als Säure.
+          <strong>Teilchenebene (Erklärung):</strong> Ethansäure-Moleküle reagieren als Säure mit Wasser-Molekülen; Ethanol-Moleküle reagieren nicht bzw. kaum als Säure.
         </p>
         <div class="grid-2">
           <div>
@@ -1692,7 +1672,7 @@
     <div class="card" style="border-color:#c7d2fe;">
       <div class="card-header">
         <h2>🚀 Profi-Exkurs: Induktive Effekte bei verschiedenen Carbonsäuren</h2>
-        <span class="tag task" id="badge-t52">Bonus-Aufgabe</span>
+        <span class="tag task" id="badge-t42">Bonus-Aufgabe</span>
       </div>
       <p>
         Nicht nur die Carbonylgruppe beeinflusst die Elektronendichte über Bindungen hinweg (induktive Effekte):
@@ -1703,18 +1683,18 @@
       </ul>
 
       <p>
-        <strong>Aufgabe 5.2 (Sortier-Challenge):</strong> Ordne die sechs Carbonsäuren mithilfe der Pfeile von der <strong>stärksten Säure (Platz 1)</strong> bis zur <strong>schwächsten Säure (Platz 6)</strong>!
+        <strong>Aufgabe 4.2 (Sortier-Challenge):</strong> Ordne die sechs Carbonsäuren mithilfe der Pfeile von der <strong>stärksten Säure (Platz 1)</strong> bis zur <strong>schwächsten Säure (Platz 6)</strong>!
       </p>
 
       <div class="rank-list" id="rankList"></div>
       <div style="margin-top:12px;">
         <button class="btn" onclick="checkRanking()">✔ Reihenfolge prüfen</button>
       </div>
-      <div class="feedback" id="fb-5-2"></div>
+      <div class="feedback" id="fb-4-2"></div>
     </div>
 
     <div class="nav-footer">
-      <button class="btn secondary" onclick="goPhase(4)">← Zurück</button>
+      <button class="btn secondary" onclick="goPhase(3)">← Zurück</button>
       <span style="font-weight:700; color:var(--success);" id="finishMsg"></span>
     </div>
   </section>
@@ -1723,8 +1703,7 @@
 <script>
   /* ================= STATE & SCORE ================= */
   const solvedTasks = new Set();
-  const TOTAL_TASKS = 10;
-  let teacherMode = false;
+  const TOTAL_TASKS = 9;
 
   function markSolved(taskId, phaseNum) {
     if (!solvedTasks.has(taskId)) {
@@ -1742,11 +1721,10 @@
 
   function updatePhaseCheck(p) {
     const map = {
-      1: ['1-1'],
+      1: ['1-1', '1-2', '1-3'],
       2: ['2-1', '2-2', '2-3'],
-      3: ['3-1', '3-2'],
-      4: ['4-1'],
-      5: ['5-1']
+      3: ['3-1'],
+      4: ['4-1']
     };
     if (map[p] && map[p].every(id => solvedTasks.has(id))) {
       document.getElementById('check-' + p).textContent = '✓';
@@ -1760,17 +1738,6 @@
     document.getElementById('phase-' + num).classList.add('active');
     document.getElementById('nav-' + num).classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  function toggleTeacherMode() {
-    teacherMode = !teacherMode;
-    document.body.classList.toggle('teacher-mode', teacherMode);
-    const btn = document.getElementById('teacherToggle');
-    btn.classList.toggle('active', teacherMode);
-    btn.textContent = teacherMode ? '👩‍🏫 Lehrer-Modus: EIN' : '👩‍🏫 Lehrer-Modus: AUS';
-    if (teacherMode) {
-      document.getElementById('notebookSheet').style.display = 'block';
-    }
   }
 
   /* ================= GENERIC MC HANDLER ================= */
@@ -1792,7 +1759,7 @@
     }
   }
 
-  /* ================= PHASE 1: VIRTUAL LAB ================= */
+  /* ================= PHASE 1: VIRTUAL LAB (STOFFEBENE) ================= */
   let indicatorAdded = { acid: false, alc: false };
 
   function addIndicatorSingle(which) {
@@ -1840,6 +1807,196 @@
     document.getElementById('phMeterBtn').disabled = true;
   }
 
+  /* ================= PHASE 1: EQUILIBRIUM PARTICLE SIM (TEILCHENEBENE) ================= */
+  const canvasAcid = document.getElementById('canvas-acid');
+  const ctxAcid = canvasAcid.getContext('2d');
+  const canvasAlc = document.getElementById('canvas-alc');
+  const ctxAlc = canvasAlc.getContext('2d');
+
+  // Chamber A: Ethansäure (4 baseline dissociated pairs + 10 intact HA)
+  const acidParticles = [];
+  for (let i = 0; i < 14; i++) {
+    acidParticles.push({
+      x: 30 + Math.random() * 380,
+      y: 25 + Math.random() * 150,
+      vx: (Math.random() - 0.5) * 1.7,
+      vy: (Math.random() - 0.5) * 1.7,
+      type: i < 4 ? 'anion' : 'neutral'
+    });
+  }
+  for (let i = 0; i < 4; i++) {
+    acidParticles.push({
+      x: 30 + Math.random() * 380,
+      y: 25 + Math.random() * 150,
+      vx: (Math.random() - 0.5) * 1.9,
+      vy: (Math.random() - 0.5) * 1.9,
+      type: 'h3o'
+    });
+  }
+  // Extra user-induced dissociation pairs in Acid chamber (slow recombination!)
+  const acidExtraPairs = [];
+
+  function forceAcidDissociation() {
+    const intact = acidParticles.find(p => p.type === 'neutral');
+    if (!intact) return;
+    intact.type = 'anion';
+    const h3o = {
+      x: Math.min(415, intact.x + 20),
+      y: Math.max(22, intact.y - 12),
+      vx: (Math.random() - 0.5) * 2.2,
+      vy: (Math.random() - 0.5) * 2.2,
+      type: 'h3o'
+    };
+    acidParticles.push(h3o);
+    // Slow recombination: ~750 frames (~12.5 seconds) before slowly recombining
+    acidExtraPairs.push({ anion: intact, h3o: h3o, frames: 750 });
+    updateAcidBadge();
+  }
+
+  function updateAcidBadge() {
+    const h3oCount = acidParticles.filter(p => p.type === 'h3o').length;
+    document.getElementById('live-ph-a').textContent = `pH = 2 (${h3oCount} H₃O⁺-Ionen aktiv)`;
+  }
+
+  // Chamber B: Ethanol (16 intact ROH; user can dissociate multiple molecules!)
+  const alcParticles = [];
+  for (let i = 0; i < 16; i++) {
+    alcParticles.push({
+      x: 30 + Math.random() * 380,
+      y: 25 + Math.random() * 150,
+      vx: (Math.random() - 0.5) * 1.7,
+      vy: (Math.random() - 0.5) * 1.7,
+      type: 'roh'
+    });
+  }
+  const alcTransientPairs = [];
+
+  function forceEthanolDissociation() {
+    const target = alcParticles.find(p => p.type === 'roh');
+    if (!target) return;
+    target.type = 'alkoxide';
+    const h3o = {
+      x: Math.min(415, target.x + 22),
+      y: Math.max(22, target.y - 12),
+      vx: (Math.random() - 0.5) * 2.4,
+      vy: (Math.random() - 0.5) * 2.4,
+      type: 'h3o'
+    };
+    alcParticles.push(h3o);
+    // Somewhat slower back-reaction than before (~280 frames ≈ 4.7 seconds)
+    alcTransientPairs.push({ anion: target, h3o: h3o, frames: 280 });
+    updateAlcBadge();
+  }
+
+  function updateAlcBadge() {
+    const count = alcTransientPairs.length;
+    const badge = document.getElementById('live-ph-b');
+    if (count > 0) {
+      badge.textContent = `Kurzzeitig ${count} RO⁻ + H₃O⁺ → reagieren zurück...`;
+      badge.className = 'ph-badge';
+    } else {
+      badge.textContent = 'pH = 7 (neutral · Rückreaktion erfolgt)';
+      badge.className = 'ph-badge neutral';
+    }
+  }
+
+  function stepParticles(list, w, h) {
+    list.forEach(p => {
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x < 18 || p.x > w - 18) p.vx *= -1;
+      if (p.y < 18 || p.y > h - 18) p.vy *= -1;
+    });
+  }
+
+  function drawParticle(ctx, p) {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, 12, 0, Math.PI * 2);
+    ctx.textAlign = 'center';
+    if (p.type === 'neutral') {
+      ctx.fillStyle = '#dc2626';
+      ctx.fill();
+      ctx.fillStyle = '#fff';
+      ctx.font = 'bold 9.5px sans-serif';
+      ctx.fillText('HA', p.x, p.y + 3);
+    } else if (p.type === 'anion') {
+      ctx.fillStyle = '#f59e0b';
+      ctx.fill();
+      ctx.fillStyle = '#fff';
+      ctx.font = 'bold 9.5px sans-serif';
+      ctx.fillText('A⁻', p.x, p.y + 3);
+    } else if (p.type === 'h3o') {
+      ctx.fillStyle = '#1d4ed8';
+      ctx.fill();
+      ctx.fillStyle = '#fff';
+      ctx.font = 'bold 8.5px sans-serif';
+      ctx.fillText('H₃O⁺', p.x, p.y + 3);
+    } else if (p.type === 'roh') {
+      ctx.fillStyle = '#16a34a';
+      ctx.fill();
+      ctx.fillStyle = '#fff';
+      ctx.font = 'bold 8.5px sans-serif';
+      ctx.fillText('ROH', p.x, p.y + 3);
+    } else if (p.type === 'alkoxide') {
+      ctx.fillStyle = '#9333ea';
+      ctx.fill();
+      ctx.fillStyle = '#fff';
+      ctx.font = 'bold 8.5px sans-serif';
+      ctx.fillText('RO⁻', p.x, p.y + 3);
+    }
+  }
+
+  function animateChambers() {
+    // 1. Acid Chamber
+    ctxAcid.clearRect(0, 0, canvasAcid.width, canvasAcid.height);
+    for (let i = acidExtraPairs.length - 1; i >= 0; i--) {
+      const pair = acidExtraPairs[i];
+      pair.frames--;
+      if (pair.frames < 90) {
+        // Gentle pull-back only in final 1.5 seconds
+        const dx = pair.anion.x - pair.h3o.x;
+        const dy = pair.anion.y - pair.h3o.y;
+        pair.h3o.vx = dx * 0.045;
+        pair.h3o.vy = dy * 0.045;
+        if (pair.frames <= 0 || Math.hypot(dx, dy) < 16) {
+          pair.anion.type = 'neutral';
+          const idx = acidParticles.indexOf(pair.h3o);
+          if (idx > -1) acidParticles.splice(idx, 1);
+          acidExtraPairs.splice(i, 1);
+          updateAcidBadge();
+        }
+      }
+    }
+    stepParticles(acidParticles, canvasAcid.width, canvasAcid.height);
+    acidParticles.forEach(p => drawParticle(ctxAcid, p));
+
+    // 2. Alcohol Chamber
+    ctxAlc.clearRect(0, 0, canvasAlc.width, canvasAlc.height);
+    for (let i = alcTransientPairs.length - 1; i >= 0; i--) {
+      const pair = alcTransientPairs[i];
+      pair.frames--;
+      // First half: free drifting; second half: gradual attraction back to RO-
+      if (pair.frames < 140) {
+        const dx = pair.anion.x - pair.h3o.x;
+        const dy = pair.anion.y - pair.h3o.y;
+        pair.h3o.vx = dx * 0.04;
+        pair.h3o.vy = dy * 0.04;
+        if (pair.frames <= 0 || Math.hypot(dx, dy) < 16) {
+          pair.anion.type = 'roh';
+          const idx = alcParticles.indexOf(pair.h3o);
+          if (idx > -1) alcParticles.splice(idx, 1);
+          alcTransientPairs.splice(i, 1);
+          updateAlcBadge();
+        }
+      }
+    }
+    stepParticles(alcParticles, canvasAlc.width, canvasAlc.height);
+    alcParticles.forEach(p => drawParticle(ctxAlc, p));
+
+    requestAnimationFrame(animateChambers);
+  }
+  animateChambers();
+
   /* ================= PHASE 2: ANIMATED ELEKTRONENSOG & HOTSPOT ================= */
   let pullAnimActive = false;
   let pullPhase = 0;
@@ -1857,7 +2014,6 @@
       btn.textContent = '⏹ Elektronensog-Animation stoppen';
       pulses.setAttribute('opacity', '1');
       banner.setAttribute('opacity', '1');
-      // Visually lengthen & weaken O-H bond
       ohBond.setAttribute('x2', '290');
       ohBond.setAttribute('stroke', '#3b82f6');
       ohBond.setAttribute('stroke-dasharray', '4,3');
@@ -1890,17 +2046,14 @@
   function animateElectronPullLoop() {
     if (pullAnimActive) {
       pullPhase = (pullPhase + 0.018) % 1;
-      // Packet 1: H (288,182) -> O_oh (228,182)
       const ep1 = document.getElementById('ep-1');
       ep1.setAttribute('cx', 288 - pullPhase * 60);
       ep1.setAttribute('cy', 182);
 
-      // Packet 2: O_oh (215,176) -> C_carb (172,134)
       const ep2 = document.getElementById('ep-2');
       ep2.setAttribute('cx', 215 - pullPhase * 43);
       ep2.setAttribute('cy', 176 - pullPhase * 42);
 
-      // Packet 3: C_carb (170,130) -> O_carb (218,76)
       const ep3 = document.getElementById('ep-3');
       ep3.setAttribute('cx', 170 + pullPhase * 48);
       ep3.setAttribute('cy', 130 - pullPhase * 54);
@@ -1943,7 +2096,6 @@
       this.lastX = 0;
       this.lastY = 0;
       this.autoSpin = true;
-
       this.bindEvents();
     }
 
@@ -1987,7 +2139,6 @@
     }
 
     project(pt) {
-      // Rotate around Y then X
       const cosY = Math.cos(this.rotY), sinY = Math.sin(this.rotY);
       const x1 = pt.x * cosY - pt.z * sinY;
       const z1 = pt.x * sinY + pt.z * cosY;
@@ -2015,14 +2166,12 @@
       const h = this.canvas.height;
       ctx.clearRect(0, 0, w, h);
 
-      // Project atoms
       const projAtoms = this.spec.atoms.map((a, idx) => ({
         ...a,
         idx,
         p: this.project(a)
       }));
 
-      // 1. Draw back-to-front ESP volumetric lobes (soft clouds)
       const sortedLobes = [...projAtoms].sort((a, b) => b.p.z - a.p.z);
       sortedLobes.forEach(a => {
         const r = a.espRadius * a.p.scale;
@@ -2036,7 +2185,6 @@
         ctx.fill();
       });
 
-      // 2. Draw bonds
       this.spec.bonds.forEach(b => {
         const a1 = projAtoms[b[0]];
         const a2 = projAtoms[b[1]];
@@ -2050,7 +2198,6 @@
           ctx.lineTo(a2.p.sx, a2.p.sy);
           ctx.stroke();
         } else {
-          // Double bond offset
           const dx = a2.p.sx - a1.p.sx;
           const dy = a2.p.sy - a1.p.sy;
           const len = Math.hypot(dx, dy) || 1;
@@ -2066,7 +2213,6 @@
         }
       });
 
-      // 3. Draw inner ball-and-stick atoms sorted back-to-front
       sortedLobes.forEach(a => {
         const r = a.atomRadius * a.p.scale;
         const grad = ctx.createRadialGradient(
@@ -2188,12 +2334,12 @@
   }
   renderAll3D();
 
-  /* ================= PHASE 2: PROTON CLEAVAGE TAP SIMULATION ================= */
+  /* ================= PHASE 2: PROTON CLEAVAGE IN VALENZSTRICHFORMEL ================= */
   const clevCanvas = document.getElementById('cleavageCanvas');
   const clevCtx = clevCanvas.getContext('2d');
 
   let clevMode = 'acid'; // 'acid' or 'alc'
-  let clevProgress = 0; // 0 to 100
+  let clevProgress = 0;
   let clevState = 'ready'; // 'ready', 'cleaved_stable', 'cleaved_snapback'
   let snapbackTimer = 0;
   let tapCount = 0;
@@ -2219,19 +2365,19 @@
     if (clevState !== 'ready') return;
     tapCount++;
     if (clevMode === 'acid') {
-      clevProgress = Math.min(100, clevProgress + 23); // ~5 taps
+      clevProgress = Math.min(100, clevProgress + 23);
       if (clevProgress >= 100) {
         clevState = 'cleaved_stable';
         testedCleavage.add('acid');
         updateCleavageCompletion();
         document.getElementById('cleavageStatus').innerHTML =
-          `✓ <strong>Geschafft in nur ${tapCount} Tipps!</strong> Das Proton wurde auf H<sub>2</sub>O übertragen → stabiles Ethanoat-Ion (CH<sub>3</sub>COO<sup>−</sup>) + H<sub>3</sub>O<sup>+</sup>!`;
+          `✓ <strong>Geschafft in nur ${tapCount} Tipps!</strong> Das Bindungselektronenpaar bleibt als 3. freies Elektronenpaar am O-Atom (Ethanoat-Ion) und H<sup>+</sup> bindet an ein freies Elektronenpaar des H<sub>2</sub>O-Moleküls (Oxonium-Ion).`;
       }
     } else {
-      clevProgress = Math.min(100, clevProgress + 8.5); // Needs ~14-18 very rapid taps against strong pull-back
+      clevProgress = Math.min(100, clevProgress + 8.5);
       if (clevProgress >= 100) {
         clevState = 'cleaved_snapback';
-        snapbackTimer = 110; // ~1.8 seconds before snapping back!
+        snapbackTimer = 135;
         testedCleavage.add('alc');
         updateCleavageCompletion();
         document.getElementById('cleavageStatus').innerHTML =
@@ -2248,14 +2394,38 @@
     }
   }
 
+  function drawBond(ctx, x1, y1, x2, y2, color = '#1e293b', width = 2.6, dashed = false) {
+    ctx.save();
+    ctx.strokeStyle = color;
+    ctx.lineWidth = width;
+    ctx.lineCap = 'round';
+    if (dashed) ctx.setLineDash([5, 4]);
+    ctx.beginPath();
+    ctx.moveTo(x1, y1);
+    ctx.lineTo(x2, y2);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  function drawLonePair(ctx, x1, y1, x2, y2, color = '#1e293b') {
+    drawBond(ctx, x1, y1, x2, y2, color, 2.4, false);
+  }
+
+  function drawAtomLabel(ctx, text, x, y, color = '#1e293b', size = 16) {
+    ctx.fillStyle = color;
+    ctx.font = `bold ${size}px sans-serif`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(text, x, y);
+  }
+
   function stepAndDrawCleavage() {
     const w = clevCanvas.width;
     const h = clevCanvas.height;
     clevCtx.clearRect(0, 0, w, h);
 
-    // Restoring force in 'ready' state
     if (clevState === 'ready' && clevProgress > 0) {
-      const pullBack = clevMode === 'acid' ? 0.22 : 0.92; // Ethanol pulls back >4x harder!
+      const pullBack = clevMode === 'acid' ? 0.22 : 0.92;
       clevProgress = Math.max(0, clevProgress - pullBack);
     }
 
@@ -2272,219 +2442,159 @@
 
     document.getElementById('cleavageProgress').style.width = clevProgress + '%';
 
-    // Draw Left Molecule Base (R-O)
-    const ox = 235, oy = 100;
-    clevCtx.fillStyle = '#1e293b';
-    clevCtx.font = 'bold 18px sans-serif';
-    clevCtx.textAlign = 'right';
-    clevCtx.textBaseline = 'middle';
-    const labelBase = clevMode === 'acid' ? 'CH₃−C(=O)−' : 'CH₃−CH₂−';
-    clevCtx.fillText(labelBase, ox - 24, oy);
+    const cleaved = clevProgress >= 100;
+    const cy = 132;
+    const ox = 258; // Hydroxy O x-position
 
-    // Draw Oxygen atom
-    clevCtx.beginPath();
-    clevCtx.arc(ox, oy, 18, 0, Math.PI * 2);
-    clevCtx.fillStyle = (clevState === 'cleaved_snapback') ? '#991b1b' : '#dc2626';
-    clevCtx.fill();
-    clevCtx.fillStyle = '#fff';
-    clevCtx.textAlign = 'center';
-    clevCtx.font = 'bold 16px sans-serif';
-    clevCtx.fillText(clevProgress >= 100 ? 'O⊖' : 'O', ox, oy);
+    if (clevMode === 'acid') {
+      // === FULL VALENZSTRICHFORMEL: ETHANSÄURE ===
+      // Methyl C at (98, cy)
+      drawBond(clevCtx, 58, cy, 86, cy);       // C-H left
+      drawBond(clevCtx, 98, cy - 36, 98, cy - 12); // C-H top
+      drawBond(clevCtx, 98, cy + 12, 98, cy + 36); // C-H bottom
+      drawAtomLabel(clevCtx, 'H', 46, cy);
+      drawAtomLabel(clevCtx, 'H', 98, cy - 48);
+      drawAtomLabel(clevCtx, 'H', 98, cy + 48);
+      drawAtomLabel(clevCtx, 'C', 98, cy);
 
-    // Draw Right Water Molecule (H2O)
-    const wx = 530, wy = 100;
-    clevCtx.beginPath();
-    clevCtx.arc(wx, wy, 24, 0, Math.PI * 2);
-    clevCtx.fillStyle = '#0284c7';
-    clevCtx.fill();
-    clevCtx.fillStyle = '#fff';
-    clevCtx.font = 'bold 15px sans-serif';
-    clevCtx.fillText(clevProgress >= 100 ? 'H₃O⁺' : 'H₂O', wx, wy);
+      // C-C bond
+      drawBond(clevCtx, 110, cy, 166, cy);
+      // Carbonyl C at (178, cy)
+      drawAtomLabel(clevCtx, 'C', 178, cy);
 
-    // Proton position interpolated between O (275) and H2O (495)
+      // C=O double bond to (222, cy - 52)
+      drawBond(clevCtx, 185, cy - 12, 212, cy - 44);
+      drawBond(clevCtx, 191, cy - 7, 218, cy - 39);
+      drawAtomLabel(clevCtx, 'O', 224, cy - 52, '#dc2626');
+      // 2 lone pairs on carbonyl O
+      drawLonePair(clevCtx, 207, cy - 66, 221, cy - 73);
+      drawLonePair(clevCtx, 237, cy - 60, 243, cy - 45);
+
+      // C-O single bond to (ox, cy + 28)
+      const oyAcid = cy + 28;
+      drawBond(clevCtx, 189, cy + 8, ox - 11, oyAcid - 6);
+      drawAtomLabel(clevCtx, 'O', ox, oyAcid, '#dc2626');
+      // 2 regular lone pairs on hydroxy O (top & bottom)
+      drawLonePair(clevCtx, ox - 8, oyAcid - 17, ox + 8, oyAcid - 17);
+      drawLonePair(clevCtx, ox - 8, oyAcid + 17, ox + 8, oyAcid + 17);
+
+      if (cleaved) {
+        // 3rd lone pair on right + negative charge
+        drawLonePair(clevCtx, ox + 15, oyAcid - 8, ox + 15, oyAcid + 8, '#dc2626');
+        drawAtomLabel(clevCtx, '⊖', ox + 26, oyAcid - 14, '#dc2626', 14);
+      }
+    } else {
+      // === FULL VALENZSTRICHFORMEL: ETHANOL ===
+      // C1 at (92, cy)
+      drawBond(clevCtx, 54, cy, 80, cy);
+      drawBond(clevCtx, 92, cy - 36, 92, cy - 12);
+      drawBond(clevCtx, 92, cy + 12, 92, cy + 36);
+      drawAtomLabel(clevCtx, 'H', 42, cy);
+      drawAtomLabel(clevCtx, 'H', 92, cy - 48);
+      drawAtomLabel(clevCtx, 'H', 92, cy + 48);
+      drawAtomLabel(clevCtx, 'C', 92, cy);
+
+      // C1-C2 bond
+      drawBond(clevCtx, 104, cy, 158, cy);
+      // C2 at (170, cy)
+      drawBond(clevCtx, 170, cy - 36, 170, cy - 12);
+      drawBond(clevCtx, 170, cy + 12, 170, cy + 36);
+      drawAtomLabel(clevCtx, 'H', 170, cy - 48);
+      drawAtomLabel(clevCtx, 'H', 170, cy + 48);
+      drawAtomLabel(clevCtx, 'C', 170, cy);
+
+      // C2-O bond
+      drawBond(clevCtx, 182, cy, ox - 12, cy);
+      drawAtomLabel(clevCtx, 'O', ox, cy, '#dc2626');
+      // 2 regular lone pairs on hydroxy O (top & bottom)
+      drawLonePair(clevCtx, ox - 8, cy - 17, ox + 8, cy - 17);
+      drawLonePair(clevCtx, ox - 8, cy + 17, ox + 8, cy + 17);
+
+      if (cleaved) {
+        drawLonePair(clevCtx, ox + 15, cy - 8, ox + 15, cy + 8, '#dc2626');
+        drawAtomLabel(clevCtx, '⊖', ox + 26, cy - 14, '#dc2626', 14);
+      }
+    }
+
+    const activeOy = clevMode === 'acid' ? cy + 28 : cy;
+
+    // === ACCEPTOR WATER MOLECULE IN VALENZSTRICHFORMEL ===
+    const wx = 565, wy = activeOy;
+    drawAtomLabel(clevCtx, 'O', wx, wy, '#0284c7');
+    // Two O-H bonds of H2O (up-right and down-right)
+    drawBond(clevCtx, wx + 10, wy - 8, wx + 32, wy - 28, '#0284c7');
+    drawBond(clevCtx, wx + 10, wy + 8, wx + 32, wy + 28, '#0284c7');
+    drawAtomLabel(clevCtx, 'H', wx + 41, wy - 35, '#0284c7');
+    drawAtomLabel(clevCtx, 'H', wx + 41, wy + 35, '#0284c7');
+    // Top lone pair on H2O oxygen
+    drawLonePair(clevCtx, wx - 8, wy - 17, wx + 8, wy - 17, '#0284c7');
+
+    if (!cleaved) {
+      // 2nd lone pair on left of H2O oxygen (available to accept H+)
+      drawLonePair(clevCtx, wx - 16, wy - 8, wx - 16, wy + 8, '#0284c7');
+    } else {
+      // New O-H bond formed in H3O+ + positive charge
+      drawBond(clevCtx, wx - 30, wy, wx - 12, wy, '#0284c7');
+      drawAtomLabel(clevCtx, '⊕', wx + 18, wy - 16, '#0284c7', 14);
+    }
+
+    // === PROTON H+ POSITION ===
     let hx;
     if (clevState === 'cleaved_snapback') {
-      // Animate proton flying back from water to O during second half of timer
-      const backFrac = snapbackTimer < 55 ? (55 - snapbackTimer) / 55 : 0;
-      hx = 492 - backFrac * 215;
+      const backFrac = snapbackTimer < 65 ? (65 - snapbackTimer) / 65 : 0;
+      hx = (wx - 42) - backFrac * ((wx - 42) - (ox + 44));
     } else {
-      hx = 278 + (clevProgress / 100) * 214;
+      hx = (ox + 44) + (clevProgress / 100) * ((wx - 42) - (ox + 44));
     }
 
-    // Draw elastic O-H bond if not cleaved
-    if (clevProgress < 100) {
-      clevCtx.beginPath();
-      clevCtx.moveTo(ox + 18, oy);
-      clevCtx.lineTo(hx - 13, oy);
-      clevCtx.strokeStyle = clevMode === 'acid' ? '#3b82f6' : '#16a34a';
-      clevCtx.lineWidth = clevMode === 'acid' ? 3 : 6;
-      if (clevMode === 'acid') clevCtx.setLineDash([6, 4]);
-      clevCtx.stroke();
-      clevCtx.setLineDash([]);
+    // Draw O-H bond before cleavage
+    if (!cleaved) {
+      drawBond(
+        clevCtx,
+        ox + 13, activeOy,
+        hx - 12, activeOy,
+        clevMode === 'acid' ? '#3b82f6' : '#16a34a',
+        clevMode === 'acid' ? 2.4 : 4.2,
+        clevMode === 'acid'
+      );
     } else if (clevState === 'cleaved_snapback') {
-      // Draw red attraction beam yanking H+ back!
-      clevCtx.beginPath();
-      clevCtx.moveTo(ox + 20, oy);
-      clevCtx.lineTo(hx - 14, oy);
-      clevCtx.strokeStyle = '#dc2626';
-      clevCtx.lineWidth = 3;
-      clevCtx.setLineDash([4, 4]);
-      clevCtx.stroke();
-      clevCtx.setLineDash([]);
+      // Red pull-back line
+      drawBond(clevCtx, ox + 22, activeOy, hx - 12, activeOy, '#dc2626', 2.5, true);
     }
 
-    // Draw Proton H+
-    clevCtx.beginPath();
-    clevCtx.arc(hx, oy, 14, 0, Math.PI * 2);
-    clevCtx.fillStyle = '#1d4ed8';
-    clevCtx.fill();
-    clevCtx.fillStyle = '#fff';
-    clevCtx.font = 'bold 13px sans-serif';
-    clevCtx.fillText('H⁺', hx, oy);
+    // Draw H atom / H+
+    if (cleaved && clevState !== 'cleaved_snapback') {
+      drawAtomLabel(clevCtx, 'H', hx, activeOy, '#0284c7', 16);
+    } else {
+      clevCtx.beginPath();
+      clevCtx.arc(hx, activeOy, 12, 0, Math.PI * 2);
+      clevCtx.fillStyle = '#eff6ff';
+      clevCtx.fill();
+      clevCtx.strokeStyle = '#1d4ed8';
+      clevCtx.lineWidth = 2;
+      clevCtx.stroke();
+      drawAtomLabel(clevCtx, 'H', hx, activeOy, '#1d4ed8', 15);
+      drawAtomLabel(clevCtx, clevMode === 'acid' ? 'δδ+' : 'δ+', hx, activeOy - 20, '#1d4ed8', 12);
+    }
 
-    // Top helper caption
+    // Header caption inside canvas
     clevCtx.fillStyle = '#475569';
     clevCtx.font = '600 13px sans-serif';
+    clevCtx.textAlign = 'center';
     clevCtx.fillText(
       clevMode === 'acid'
-        ? 'Bindungsstärke: NIEDRIG (stark polarisiert δδ⁺)'
-        : 'Bindungsstärke: HOCH (kaum polarisiert δ⁺)',
-      w / 2, 24
+        ? 'Valenzstrichformel: Ethansäure + Wasser (O−H-Bindung stark polarisiert → leicht spaltbar)'
+        : 'Valenzstrichformel: Ethanol + Wasser (O−H-Bindung schwach polarisiert → schwer spaltbar)',
+      w / 2, 22
     );
 
     requestAnimationFrame(stepAndDrawCleavage);
   }
   stepAndDrawCleavage();
 
-  /* ================= PHASE 3: EQUILIBRIUM PARTICLE SIM ================= */
-  const canvasAcid = document.getElementById('canvas-acid');
-  const ctxAcid = canvasAcid.getContext('2d');
-  const canvasAlc = document.getElementById('canvas-alc');
-  const ctxAlc = canvasAlc.getContext('2d');
+  /* ================= PHASE 3 (ehemals Phase 4): MESOMERIE & OCTET ================= */
+  let mesoRevealed = false;
 
-  const acidParticles = [];
-  for (let i = 0; i < 14; i++) {
-    acidParticles.push({
-      x: 30 + Math.random() * 380,
-      y: 25 + Math.random() * 140,
-      vx: (Math.random() - 0.5) * 1.8,
-      vy: (Math.random() - 0.5) * 1.8,
-      type: i < 4 ? 'anion' : 'neutral'
-    });
-  }
-  for (let i = 0; i < 4; i++) {
-    acidParticles.push({
-      x: 30 + Math.random() * 380,
-      y: 25 + Math.random() * 140,
-      vx: (Math.random() - 0.5) * 2.1,
-      vy: (Math.random() - 0.5) * 2.1,
-      type: 'h3o'
-    });
-  }
-
-  const alcParticles = [];
-  for (let i = 0; i < 16; i++) {
-    alcParticles.push({
-      x: 30 + Math.random() * 380,
-      y: 25 + Math.random() * 140,
-      vx: (Math.random() - 0.5) * 1.8,
-      vy: (Math.random() - 0.5) * 1.8,
-      type: 'roh'
-    });
-  }
-  let transientPair = null;
-
-  function forceEthanolDissociation() {
-    if (transientPair) return;
-    const target = alcParticles[0];
-    target.type = 'alkoxide';
-    const h3o = {
-      x: target.x + 22,
-      y: target.y - 10,
-      vx: 1.5,
-      vy: -1.1,
-      type: 'h3o'
-    };
-    alcParticles.push(h3o);
-    document.getElementById('live-ph-b').textContent = 'Kurzzeitig: RO⁻ + H₃O⁺ entsteht...';
-    transientPair = { anion: target, h3o: h3o, frames: 95 };
-  }
-
-  function stepParticles(list, w, h) {
-    list.forEach(p => {
-      p.x += p.vx;
-      p.y += p.vy;
-      if (p.x < 18 || p.x > w - 18) p.vx *= -1;
-      if (p.y < 18 || p.y > h - 18) p.vy *= -1;
-    });
-  }
-
-  function drawParticle(ctx, p) {
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, 11, 0, Math.PI * 2);
-    ctx.textAlign = 'center';
-    if (p.type === 'neutral') {
-      ctx.fillStyle = '#dc2626';
-      ctx.fill();
-      ctx.fillStyle = '#fff';
-      ctx.font = 'bold 9px sans-serif';
-      ctx.fillText('HA', p.x, p.y + 3);
-    } else if (p.type === 'anion') {
-      ctx.fillStyle = '#f59e0b';
-      ctx.fill();
-      ctx.fillStyle = '#fff';
-      ctx.font = 'bold 9px sans-serif';
-      ctx.fillText('A⁻', p.x, p.y + 3);
-    } else if (p.type === 'h3o') {
-      ctx.fillStyle = '#1d4ed8';
-      ctx.fill();
-      ctx.fillStyle = '#fff';
-      ctx.font = 'bold 8px sans-serif';
-      ctx.fillText('H₃O⁺', p.x, p.y + 3);
-    } else if (p.type === 'roh') {
-      ctx.fillStyle = '#16a34a';
-      ctx.fill();
-      ctx.fillStyle = '#fff';
-      ctx.font = 'bold 8px sans-serif';
-      ctx.fillText('ROH', p.x, p.y + 3);
-    } else if (p.type === 'alkoxide') {
-      ctx.fillStyle = '#9333ea';
-      ctx.fill();
-      ctx.fillStyle = '#fff';
-      ctx.font = 'bold 8px sans-serif';
-      ctx.fillText('RO⁻', p.x, p.y + 3);
-    }
-  }
-
-  function animateChambers() {
-    ctxAcid.clearRect(0, 0, canvasAcid.width, canvasAcid.height);
-    stepParticles(acidParticles, canvasAcid.width, canvasAcid.height);
-    acidParticles.forEach(p => drawParticle(ctxAcid, p));
-
-    ctxAlc.clearRect(0, 0, canvasAlc.width, canvasAlc.height);
-    if (transientPair) {
-      transientPair.frames--;
-      const dx = transientPair.anion.x - transientPair.h3o.x;
-      const dy = transientPair.anion.y - transientPair.h3o.y;
-      transientPair.h3o.vx = dx * 0.06;
-      transientPair.h3o.vy = dy * 0.06;
-
-      if (transientPair.frames <= 0 || Math.hypot(dx, dy) < 16) {
-        transientPair.anion.type = 'roh';
-        const idx = alcParticles.indexOf(transientPair.h3o);
-        if (idx > -1) alcParticles.splice(idx, 1);
-        transientPair = null;
-        document.getElementById('live-ph-b').textContent = 'pH = 7 (Sofortige Rückreaktion!)';
-      }
-    }
-    stepParticles(alcParticles, canvasAlc.width, canvasAlc.height);
-    alcParticles.forEach(p => drawParticle(ctxAlc, p));
-
-    requestAnimationFrame(animateChambers);
-  }
-  animateChambers();
-
-  /* ================= PHASE 4: MESOMERIE & OCTET ================= */
   function switchMesoTab(which) {
     document.getElementById('tab-meso-ac').classList.toggle('active', which === 'ac');
     document.getElementById('tab-meso-et').classList.toggle('active', which === 'et');
@@ -2492,10 +2602,15 @@
     document.getElementById('panel-meso-et').style.display = which === 'et' ? 'block' : 'none';
   }
 
-  function triggerMesomerie() {
-    document.getElementById('meso-arrows').setAttribute('opacity', '1');
-    document.getElementById('meso-gf2').setAttribute('opacity', '1');
-    document.getElementById('energy-drop').setAttribute('opacity', '1');
+  function toggleMesomerie() {
+    mesoRevealed = !mesoRevealed;
+    document.getElementById('meso-arrows').setAttribute('opacity', mesoRevealed ? '1' : '0');
+    document.getElementById('meso-gf2').setAttribute('opacity', mesoRevealed ? '1' : '0.16');
+    document.getElementById('energy-drop').setAttribute('opacity', mesoRevealed ? '1' : '0.2');
+    document.getElementById('mesoSuccessNote').style.display = mesoRevealed ? 'block' : 'none';
+    document.getElementById('mesoActionBtn').textContent = mesoRevealed
+      ? '↺ Grenzformel II wieder ausblenden'
+      : '🔄 Elektronenpaar umklappen (Grenzformel II zeigen)';
   }
 
   function triggerOctetViolation() {
@@ -2506,9 +2621,10 @@
     const ring = document.getElementById('octet-c-highlight');
     ring.setAttribute('stroke', '#dc2626');
     ring.setAttribute('fill', 'rgba(220,38,38,0.18)');
+    document.getElementById('octet-bad-bond').setAttribute('opacity', '1');
   }
 
-  /* ================= PHASE 5: CLOZE & NOTEBOOK ================= */
+  /* ================= PHASE 4 (ehemals Phase 5): CLOZE & NOTEBOOK ================= */
   let selectedChipEl = null;
 
   function selectChip(chipEl) {
@@ -2559,12 +2675,12 @@
         s.classList.add('wrong');
       }
     });
-    const fb = document.getElementById('fb-5-1');
+    const fb = document.getElementById('fb-4-1');
     if (correctCount === slots.length) {
       fb.textContent = '✓ Alle 8 Lücken perfekt ausgefüllt! Unten wurde der vollständige Hefteintrag zum Übertragen freigeschaltet.';
       fb.className = 'feedback show ok';
       document.getElementById('notebookSheet').style.display = 'block';
-      markSolved('5-1', 5);
+      markSolved('4-1', 4);
     } else {
       fb.textContent = `${correctCount} von ${slots.length} Lücken sind richtig. Klicke auf rot markierte Lücken, um sie zu leeren und neu zu belegen.`;
       fb.className = 'feedback show err';
@@ -2581,21 +2697,10 @@
       c.classList.remove('used', 'selected');
     });
     selectedChipEl = null;
-    document.getElementById('fb-5-1').className = 'feedback';
+    document.getElementById('fb-4-1').className = 'feedback';
   }
 
-  function solveClozeTeacher() {
-    document.querySelectorAll('.drop-slot').forEach(s => {
-      s.textContent = s.dataset.ans;
-      s.dataset.filled = s.dataset.ans;
-      s.className = 'drop-slot filled correct';
-    });
-    document.querySelectorAll('#wordBank .chip').forEach(c => c.classList.add('used'));
-    document.getElementById('notebookSheet').style.display = 'block';
-    markSolved('5-1', 5);
-  }
-
-  /* ================= PHASE 5: BONUS RANKING ================= */
+  /* ================= PHASE 4: BONUS RANKING ================= */
   const acidsData = [
     { id: 'ccl3', name: 'Trichlorethansäure', formula: 'CCl<sub>3</sub>−COOH', rank: 1 },
     { id: 'chcl2', name: 'Dichlorethansäure', formula: 'CHCl<sub>2</sub>−COOH', rank: 2 },
@@ -2651,11 +2756,11 @@
         break;
       }
     }
-    const fb = document.getElementById('fb-5-2');
+    const fb = document.getElementById('fb-4-2');
     if (ok) {
       fb.textContent = '✓ Exzellent! Trichlorethansäure > Dichlorethansäure > Monochlorethansäure > Methansäure > Ethansäure > Propansäure.';
       fb.className = 'feedback show ok';
-      markSolved('5-2', 5);
+      markSolved('4-2', 4);
     } else {
       fb.textContent = '✗ Noch nicht ganz richtig: Mehr Cl-Atome (stärkerer −I-Effekt) erhöhen die Säurestärke; längere Alkylketten (+I-Effekt) verringern sie.';
       fb.className = 'feedback show err';
