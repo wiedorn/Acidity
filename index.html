@@ -83,7 +83,7 @@
       gap: 6px;
     }
 
-    /* Stepper Navigation (4 Phasen) */
+    /* Stepper Navigation (4 Lektionen) */
     .stepper {
       max-width: 1140px;
       margin: 0 auto;
@@ -291,7 +291,7 @@
       gap: 12px;
     }
 
-    /* Phase 1: Virtual Lab (Stoffebene) & Equilibrium (Teilchenebene) */
+    /* Lektion 1: Virtual Lab (Stoffebene) & Equilibrium (Teilchenebene) */
     .lab-bench {
       background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
       border: 1px solid var(--border);
@@ -495,7 +495,26 @@
       border: 1px solid #fecaca;
     }
 
-    /* Phase 2: Elektronensog, 3D ESP & Cleavage Game */
+    /* Lektion 2: Balken-Darstellung, Magneten, 3D ESP & Cleavage Game */
+    .magnet-task-banner {
+      background: #eff6ff;
+      border: 1.5px solid #93c5fd;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 16px;
+    }
+
+    .magnet-task-banner h3 {
+      margin: 0 0 6px;
+      font-size: 1.04rem;
+      color: #1e3a8a;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
     .heatmap-legend {
       display: flex;
       align-items: center;
@@ -527,17 +546,18 @@
     }
 
     .mol-panel h4 {
-      margin: 0 0 6px;
+      margin: 0 0 4px;
       font-size: 1.05rem;
     }
 
     .svg-stage {
       width: 100%;
-      max-width: 400px;
+      max-width: 420px;
       height: auto;
       margin: 0 auto;
       display: block;
       user-select: none;
+      touch-action: none;
     }
 
     /* 3D Viewer Cards */
@@ -647,7 +667,7 @@
       transition: width 0.08s linear;
     }
 
-    /* Phase 3: Mesomerie-Werkstatt */
+    /* Lektion 3: Mesomerie-Werkstatt */
     .tab-bar {
       display: flex;
       gap: 10px;
@@ -717,7 +737,7 @@
       75% { transform: translateX(6px); }
     }
 
-    /* Phase 4: Dialogue & Notebook Entry */
+    /* Lektion 4: Dialogue & Notebook Entry */
     .chip-bank {
       display: flex;
       flex-wrap: wrap;
@@ -903,34 +923,34 @@
     <div class="brand">
       <h1>Acidität von Ethansäure &amp; Ethanol</h1>
     </div>
-    <div class="score-pill" id="scoreDisplay">★ 0 / 9 Aufgaben</div>
+    <div class="score-pill" id="scoreDisplay">★ 0 / 10 Aufgaben</div>
   </div>
-  <nav class="stepper" aria-label="Lernphasen">
+  <nav class="stepper" aria-label="Lektionen">
     <button class="step-btn active" id="nav-1" onclick="goPhase(1)">
-      <span class="step-num">Phase 1 <span id="check-1"></span></span>
-      <span class="step-title">1. Stoff- &amp; Teilchenebene</span>
+      <span class="step-num">Lektion 1 <span id="check-1"></span></span>
+      <span class="step-title">Experiment</span>
     </button>
     <button class="step-btn" id="nav-2" onclick="goPhase(2)">
-      <span class="step-num">Phase 2 <span id="check-2"></span></span>
-      <span class="step-title">2. Erklärung 1 – Bindungspolarität</span>
+      <span class="step-num">Lektion 2 <span id="check-2"></span></span>
+      <span class="step-title">Bindungspolarität</span>
     </button>
     <button class="step-btn" id="nav-3" onclick="goPhase(3)">
-      <span class="step-num">Phase 3 <span id="check-3"></span></span>
-      <span class="step-title">3. Mesomeriestabilisierung des Anions</span>
+      <span class="step-num">Lektion 3 <span id="check-3"></span></span>
+      <span class="step-title">Mesomeriestabilisierung</span>
     </button>
     <button class="step-btn" id="nav-4" onclick="goPhase(4)">
-      <span class="step-num">Phase 4 <span id="check-4"></span></span>
-      <span class="step-title">4. Hefteintrag &amp; Exkurs</span>
+      <span class="step-num">Lektion 4 <span id="check-4"></span></span>
+      <span class="step-title">Hefteintrag &amp; Exkurs</span>
     </button>
   </nav>
 </header>
 
 <main>
-  <!-- ==================== PHASE 1 ==================== -->
+  <!-- ==================== LEKTION 1 ==================== -->
   <section class="phase-section active" id="phase-1">
     <div class="card">
       <div class="card-header">
-        <h2>Phase 1: Vergleich im Experiment &amp; Gleichgewicht</h2>
+        <h2>Lektion 1: Experiment</h2>
         <span class="tag">Stoffebene &amp; Teilchenebene</span>
       </div>
 
@@ -1019,7 +1039,6 @@
             <strong>A: Ethansäure + Wasser</strong>
             <span class="sim-status-pill" id="live-h3o-a">2 H<sub>3</sub>O<sup>+</sup>-Ionen aktiv</span>
           </div>
-          <!-- Gleichung mit längerem Pfeil für Hinreaktion -->
           <div class="eq-equation">
             <span>CH<sub>3</sub>COOH + H<sub>2</sub>O</span>
             <svg width="64" height="20" viewBox="0 0 64 20" aria-label="Gleichgewichtspfeil mit längerer Hinreaktion">
@@ -1048,7 +1067,6 @@
             <strong>B: Ethanol + Wasser</strong>
             <span class="sim-status-pill neutral" id="live-h3o-b">0 H<sub>3</sub>O<sup>+</sup>-Ionen aktiv</span>
           </div>
-          <!-- Gleichung mit längerem Pfeil für Rückreaktion -->
           <div class="eq-equation">
             <span>CH<sub>3</sub>CH<sub>2</sub>OH + H<sub>2</sub>O</span>
             <svg width="64" height="20" viewBox="0 0 64 20" aria-label="Gleichgewichtspfeil mit längerer Rückreaktion">
@@ -1088,8 +1106,8 @@
           <button class="opt-btn" onclick="checkMC('1-2', this, true, 'Richtig! Hängt man die Endung „-at“ an den Namen Ethanol an, erhält man das Ethanolat-Ion (Stoffklasse: Alkoholat-Ionen).')">
             Ethanolat-Ion
           </button>
-          <button class="opt-btn" onclick="checkMC('1-2', this, false, 'Falsch: Hydroxid-Ionen haben die Formel OH⁻.')">
-            Hydroxid-Ion
+          <button class="opt-btn" onclick="checkMC('1-2', this, false, 'Falsch: Der Name leitet sich vom Alkanol Ethanol ab, nicht vom Alkan Ethan.')">
+            Ethanat-Ion
           </button>
         </div>
         <div class="feedback" id="fb-1-2"></div>
@@ -1118,15 +1136,15 @@
 
     <div class="nav-footer">
       <span></span>
-      <button class="btn" onclick="goPhase(2)">Weiter zu Phase 2: Erklärung 1 – Bindungspolarität →</button>
+      <button class="btn" onclick="goPhase(2)">Weiter zu Lektion 2: Bindungspolarität →</button>
     </div>
   </section>
 
-  <!-- ==================== PHASE 2 ==================== -->
+  <!-- ==================== LEKTION 2 ==================== -->
   <section class="phase-section" id="phase-2">
     <div class="card">
       <div class="card-header">
-        <h2>Phase 2: Erklärung 1 – Bindungspolarität</h2>
+        <h2>Lektion 2: Bindungspolarität</h2>
         <span class="tag">Teilchenebene</span>
       </div>
 
@@ -1143,171 +1161,142 @@
         </li>
       </ul>
 
-      <div class="heatmap-legend">
-        <span style="color:#dc2626; font-weight:700;">Rot (δ<sup>−</sup>): hohe Elektronendichte</span>
-        <div class="gradient-bar"></div>
-        <span style="color:#1d4ed8; font-weight:700;">Blau (δ<sup>+</sup> / δδ<sup>+</sup>): niedrige Elektronendichte</span>
+      <!-- Interaktives Magnet- & Balken-Modell -->
+      <div class="magnet-task-banner">
+        <h3>
+          <span>🧲 Aufgabe 2.1: Elektronegativitäts-Magneten auf den elektronegativen O-Atomen platzieren</span>
+          <span class="tag task" id="badge-t21">0 / 3 Magneten platziert</span>
+        </h3>
+        <p style="margin:0; font-size:0.93rem;">
+          Jede Bindung ist hier als <strong>Balken</strong> mit zwei Bindungselektronen dargestellt (bei unpolaren Bindungen liegen sie mittig). Ziehe die kleinen <strong>Magneten</strong> per Drag-and-Drop auf die <strong>elektronegativen Sauerstoff-Atome</strong> (EN = 3,5) und beobachte beim Verschieben, wie die Elektronen in den Balken angezogen werden!
+        </p>
       </div>
 
-      <!-- Valenzstrichformeln mit animierter Polarisierung (ohne wandernde Elektronen!) -->
       <div class="grid-2">
-        <!-- Ethansäure -->
+        <!-- Ethansäure Balken + 2 Magneten -->
         <div class="mol-panel">
-          <h4>Ethansäure-Molekül (CH<sub>3</sub>COOH)</h4>
-          <p style="font-size:0.85rem; color:var(--text-muted); margin:0 0 8px;">
-            EN(H) = 2,2 &nbsp;|&nbsp; EN(C) = 2,5 &nbsp;|&nbsp; EN(O) = 3,5
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:6px; flex-wrap:wrap; margin-bottom:4px;">
+            <h4 style="margin:0;">Ethansäure-Molekül (2 O-Atome)</h4>
+            <button class="mini-btn" style="width:auto; padding:0 10px; font-size:0.78rem; height:32px;" onclick="resetMagnets('ac')">↺ Reset</button>
+          </div>
+          <p style="font-size:0.83rem; color:var(--text-muted); margin:0 0 6px;">
+            Ziehe <strong>beide Magneten</strong> aus der Ablage auf die zwei O-Atome!
           </p>
-          <button class="btn acid" id="pullBtnAcid" onclick="toggleElectronPull()" style="margin-bottom:8px;">
-            🧲 Elektronenverschiebung in den Bindungen zeigen
-          </button>
 
-          <svg class="svg-stage" viewBox="0 0 375 250" id="svg-acetic">
-            <g id="pull-banner" opacity="0" style="transition: opacity 0.3s;">
-              <rect x="10" y="6" width="355" height="30" rx="7" fill="#fef2f2" stroke="#fca5a5" />
-              <text x="187" y="25" font-size="12" font-weight="700" fill="#b91c1c" text-anchor="middle">
-                Sauerstoff-Atom der Carbonylgruppe polarisiert die O−H-Bindung!
-              </text>
+          <svg class="svg-stage" id="svg-acetic-bars" viewBox="0 0 400 285">
+            <!-- Magnet-Ablage oben -->
+            <rect x="14" y="8" width="372" height="44" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-dasharray="4,3" />
+            <text x="24" y="34" font-size="11.5" font-weight="600" fill="#475569">Magnet-Ablage (EN = 3,5):</text>
+
+            <!-- Drop-Zielkreise auf den beiden O-Atomen -->
+            <circle id="target-ac-carb" cx="236" cy="96" r="24" fill="rgba(220,38,38,0.06)" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="4,3" />
+            <circle id="target-ac-hyd" cx="238" cy="216" r="24" fill="rgba(220,38,38,0.06)" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="4,3" />
+
+            <!-- Balken-Layer (wird dynamisch von JS gezeichnet) -->
+            <g id="layer-bars-ac"></g>
+
+            <!-- Freie Elektronenpaare an den O-Atomen -->
+            <g stroke="#1e293b" stroke-width="2.5" stroke-linecap="round">
+              <line x1="216" y1="77" x2="233" y2="68" />
+              <line x1="255" y1="84" x2="262" y2="101" />
+              <line x1="228" y1="194" x2="248" y2="194" />
+              <line x1="228" y1="238" x2="248" y2="238" />
             </g>
 
-            <!-- Polarity halos on O and H -->
-            <circle cx="226" cy="74" r="24" fill="#ef4444" opacity="0.14" id="halo-co" />
-            <circle cx="229" cy="184" r="22" fill="#f97316" opacity="0.14" id="halo-oh" />
-            <circle cx="296" cy="184" r="20" fill="#2563eb" opacity="0.16" id="halo-h" />
-
-            <!-- Static Bonds -->
-            <g stroke="#1e293b" stroke-width="3" stroke-linecap="round">
-              <line x1="94" y1="134" x2="44" y2="134" />
-              <line x1="94" y1="134" x2="94" y2="84" />
-              <line x1="94" y1="134" x2="94" y2="184" />
-              <line x1="94" y1="134" x2="174" y2="134" />
-              <line x1="170" y1="129" x2="212" y2="79" />
-              <line x1="178" y1="136" x2="220" y2="86" />
-              <line x1="174" y1="134" x2="218" y2="178" />
-              <line id="ac-oh-bond" x1="242" y1="184" x2="282" y2="184" stroke="#1e293b" stroke-width="3" />
-            </g>
-
-            <!-- Lone pairs on O atoms -->
-            <g stroke="#1e293b" stroke-width="2.6" stroke-linecap="round">
-              <line x1="208" y1="58" x2="223" y2="48" />
-              <line x1="240" y1="64" x2="247" y2="81" />
-              <line x1="220" y1="164" x2="238" y2="164" />
-              <line x1="220" y1="204" x2="238" y2="204" />
-            </g>
-
-            <!-- Local Bond Polarization Clouds (stay inside each bond, NO migration!) -->
-            <g id="electron-pulses" opacity="0" style="transition: opacity 0.3s;">
-              <!-- O-H bond electron cloud shifted strongly toward Hydroxy-O -->
-              <ellipse id="cloud-ac-oh" cx="256" cy="184" rx="14" ry="6.5" fill="rgba(220,38,38,0.28)" stroke="#dc2626" stroke-width="1.5" />
-              <!-- Inductive arrow on O-H bond -->
-              <polyline points="262,179 254,184 262,189" fill="none" stroke="#dc2626" stroke-width="2.2" />
-
-              <!-- C-O bond electron cloud shifted toward Carbonyl-C -->
-              <ellipse id="cloud-ac-co" cx="192" cy="152" rx="14" ry="6.5" transform="rotate(45 192 152)" fill="rgba(220,38,38,0.24)" stroke="#dc2626" stroke-width="1.5" />
-              <polyline points="196,149 187,147 189,156" fill="none" stroke="#dc2626" stroke-width="2.2" />
-
-              <!-- C=O bond electron cloud shifted strongly toward Carbonyl-O -->
-              <ellipse id="cloud-ac-carbonyl" cx="204" cy="98" rx="16" ry="8" transform="rotate(-48 204 98)" fill="rgba(220,38,38,0.32)" stroke="#dc2626" stroke-width="1.5" />
-              <polyline points="200,94 209,92 207,101" fill="none" stroke="#dc2626" stroke-width="2.2" />
-            </g>
-
-            <!-- Atoms -->
+            <!-- Atom-Symbole -->
             <g font-family="sans-serif" font-weight="700" font-size="18" text-anchor="middle" dominant-baseline="central">
-              <text x="31" y="134" fill="#1e293b">H</text>
-              <text x="94" y="70" fill="#1e293b">H</text>
-              <text x="94" y="200" fill="#1e293b">H</text>
-              <text x="94" y="134" fill="#1e293b">C</text>
-              <text x="174" y="134" fill="#1e293b">C</text>
-              <text x="226" y="74" fill="#dc2626">O</text>
-              <text x="229" y="184" fill="#dc2626">O</text>
-
-              <g id="ac-h-group">
-                <text id="ac-h-text" x="296" y="184" fill="#1d4ed8">H</text>
-              </g>
-
-              <text x="253" y="52" font-size="13.5" fill="#dc2626">δ−</text>
-              <text x="162" y="116" font-size="13.5" fill="#1d4ed8">δ+</text>
-              <text x="247" y="205" font-size="13.5" fill="#dc2626">δ−</text>
-              <text id="ac-h-delta" x="320" y="168" font-size="14" fill="#1d4ed8">δ+</text>
+              <text x="32" y="158" fill="#1e293b">H</text>
+              <text x="98" y="92" fill="#1e293b">H</text>
+              <text x="98" y="224" fill="#1e293b">H</text>
+              <text x="98" y="158" fill="#1e293b">C</text>
+              <text x="182" y="158" fill="#1e293b">C</text>
+              <text x="236" y="96" fill="#dc2626">O</text>
+              <text x="238" y="216" fill="#dc2626">O</text>
+              <text x="322" y="216" fill="#1d4ed8">H</text>
             </g>
+
+            <!-- Dynamische Partialladungen (nur einfache δ+ / δ−!) -->
+            <g font-family="sans-serif" font-weight="700" font-size="14" text-anchor="middle">
+              <text id="delta-ac-carb" x="266" y="74" fill="#dc2626" opacity="0">δ−</text>
+              <text id="delta-ac-c2" x="172" y="136" fill="#1d4ed8" opacity="0">δ+</text>
+              <text id="delta-ac-hyd" x="260" y="242" fill="#dc2626" opacity="0">δ−</text>
+              <text id="delta-ac-h" x="344" y="200" fill="#1d4ed8" opacity="0">δ+</text>
+            </g>
+
+            <!-- Draggable Magnet 1 & Magnet 2 -->
+            <g id="mag-ac-1" style="cursor:grab;"></g>
+            <g id="mag-ac-2" style="cursor:grab;"></g>
           </svg>
-          <p style="font-size:0.86rem; margin:6px 0 0; color:#1e3a8a;">
-            Das <strong>Sauerstoff-Atom der Carbonylgruppe</strong> zieht Elektronen stark an → <strong>starke Polarisierung</strong> der O−H-Bindung → H<sup>+</sup>-Ion kann leicht abgespalten werden.
+
+          <p id="status-mag-ac" style="font-size:0.85rem; margin:6px 0 0; color:#1e3a8a; min-height:42px;">
+            Noch keine Magneten platziert: Alle Bindungselektronen liegen mittig in den Balken.
           </p>
         </div>
 
-        <!-- Ethanol -->
+        <!-- Ethanol Balken + 1 Magnet -->
         <div class="mol-panel">
-          <h4>Ethanol-Molekül (CH<sub>3</sub>CH<sub>2</sub>OH)</h4>
-          <p style="font-size:0.85rem; color:var(--text-muted); margin:0 0 8px;">
-            Keine Carbonylgruppe – nur Alkylkette!
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:6px; flex-wrap:wrap; margin-bottom:4px;">
+            <h4 style="margin:0;">Ethanol-Molekül (1 O-Atom)</h4>
+            <button class="mini-btn" style="width:auto; padding:0 10px; font-size:0.78rem; height:32px;" onclick="resetMagnets('et')">↺ Reset</button>
+          </div>
+          <p style="font-size:0.83rem; color:var(--text-muted); margin:0 0 6px;">
+            Ziehe den <strong>Magneten</strong> auf das einzige elektronegative O-Atom!
           </p>
-          <button class="btn secondary" id="pushBtnEthanol" onclick="toggleEthanolPush()" style="margin-bottom:8px;">
-            🔄 Elektronenschiebenden Alkyl-Effekt zeigen
-          </button>
 
-          <svg class="svg-stage" viewBox="0 0 375 250">
-            <g id="et-pull-banner" opacity="0" style="transition: opacity 0.3s;">
-              <rect x="10" y="6" width="355" height="30" rx="7" fill="#f0fdf4" stroke="#86efac" />
-              <text x="187" y="25" font-size="12" font-weight="700" fill="#15803d" text-anchor="middle">
-                C−H-Bindungen (ΔEN = 0,4) schieben leicht Elektronendichte!
-              </text>
+          <svg class="svg-stage" id="svg-ethanol-bars" viewBox="0 0 400 285">
+            <!-- Magnet-Ablage oben -->
+            <rect x="14" y="8" width="372" height="44" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-dasharray="4,3" />
+            <text x="24" y="34" font-size="11.5" font-weight="600" fill="#475569">Magnet-Ablage (EN = 3,5):</text>
+
+            <!-- Drop-Zielkreis auf dem Hydroxy-O -->
+            <circle id="target-et-hyd" cx="242" cy="216" r="24" fill="rgba(220,38,38,0.06)" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="4,3" />
+
+            <!-- Balken-Layer -->
+            <g id="layer-bars-et"></g>
+
+            <!-- Freie Elektronenpaare am Hydroxy-O -->
+            <g stroke="#1e293b" stroke-width="2.5" stroke-linecap="round">
+              <line x1="232" y1="194" x2="252" y2="194" />
+              <line x1="232" y1="238" x2="252" y2="238" />
             </g>
 
-            <g stroke="#1e293b" stroke-width="3" stroke-linecap="round">
-              <line x1="94" y1="134" x2="44" y2="134" />
-              <line x1="94" y1="134" x2="94" y2="84" />
-              <line x1="94" y1="134" x2="94" y2="184" />
-              <line x1="94" y1="134" x2="174" y2="134" />
-              <line x1="174" y1="134" x2="174" y2="84" />
-              <line x1="174" y1="134" x2="156" y2="182" />
-              <line x1="174" y1="134" x2="218" y2="178" />
-              <line x1="242" y1="184" x2="282" y2="184" />
-            </g>
-
-            <!-- Lone pairs on Hydroxy O -->
-            <g stroke="#1e293b" stroke-width="2.6" stroke-linecap="round">
-              <line x1="220" y1="164" x2="238" y2="164" />
-              <line x1="220" y1="204" x2="238" y2="204" />
-            </g>
-
-            <!-- Local Bond Polarization Indicators for Alkyl Push (NO migrating electron dots!) -->
-            <g id="et-push-pulses" opacity="0" style="transition: opacity 0.3s;">
-              <!-- Weak C-H polarity clouds shifted slightly toward C -->
-              <ellipse id="cloud-et-ch1" cx="74" cy="134" rx="12" ry="5.5" fill="rgba(22,163,74,0.22)" stroke="#16a34a" stroke-width="1.3" />
-              <polyline points="70,129 78,134 70,139" fill="none" stroke="#15803d" stroke-width="2" />
-
-              <!-- C-C inductive arrow -->
-              <polyline points="131,129 139,134 131,139" fill="none" stroke="#15803d" stroke-width="2.2" />
-
-              <!-- C-O inductive arrow -->
-              <polyline points="195,152 202,163 190,160" fill="none" stroke="#15803d" stroke-width="2.2" />
-
-              <text x="128" y="114" font-size="11" font-weight="700" fill="#15803d" text-anchor="middle">elektronenschiebend</text>
-            </g>
-
+            <!-- Atom-Symbole -->
             <g font-family="sans-serif" font-weight="700" font-size="18" text-anchor="middle" dominant-baseline="central">
-              <text x="31" y="134" fill="#1e293b">H</text>
-              <text x="94" y="70" fill="#1e293b">H</text>
-              <text x="94" y="200" fill="#1e293b">H</text>
-              <text x="94" y="134" fill="#1e293b">C</text>
-              <text x="174" y="134" fill="#1e293b">C</text>
-              <text x="174" y="70" fill="#1e293b">H</text>
-              <text x="149" y="198" fill="#1e293b">H</text>
-              <text x="229" y="184" fill="#dc2626">O</text>
-              <text x="296" y="184" fill="#1d4ed8">H</text>
-
-              <text x="247" y="205" font-size="13.5" fill="#dc2626">δ−</text>
-              <text x="316" y="168" font-size="13.5" fill="#1d4ed8">δ+</text>
+              <text x="32" y="158" fill="#1e293b">H</text>
+              <text x="98" y="92" fill="#1e293b">H</text>
+              <text x="98" y="224" fill="#1e293b">H</text>
+              <text x="98" y="158" fill="#1e293b">C</text>
+              <text x="180" y="158" fill="#1e293b">C</text>
+              <text x="180" y="92" fill="#1e293b">H</text>
+              <text x="160" y="222" fill="#1e293b">H</text>
+              <text x="242" y="216" fill="#dc2626">O</text>
+              <text x="322" y="216" fill="#1d4ed8">H</text>
             </g>
+
+            <!-- Dynamische Partialladungen (nur einfache δ+ / δ−!) -->
+            <g font-family="sans-serif" font-weight="700" font-size="14" text-anchor="middle">
+              <text id="delta-et-hyd" x="264" y="242" fill="#dc2626" opacity="0">δ−</text>
+              <text id="delta-et-h" x="344" y="200" fill="#1d4ed8" opacity="0">δ+</text>
+            </g>
+
+            <!-- Draggable Magnet -->
+            <g id="mag-et-1" style="cursor:grab;"></g>
           </svg>
-          <p style="font-size:0.86rem; margin:6px 0 0; color:var(--text-muted);">
-            Keine Carbonylgruppe, sondern elektronenschiebende Alkylgruppe → <strong>geringere Polarisierung</strong> der O−H-Bindung → H<sup>+</sup>-Ion wird nicht so leicht abgegeben.
+
+          <p id="status-mag-et" style="font-size:0.85rem; margin:6px 0 0; color:var(--text-muted); min-height:42px;">
+            Noch kein Magnet platziert: Alle Bindungselektronen liegen mittig in den Balken.
           </p>
         </div>
       </div>
 
-      <!-- 3D Räumlich drehbare Elektronendichtedarstellungen (Edukte, starre 3D-Isofläche!) -->
-      <div style="margin-top:18px;">
+      <!-- 3D Räumlich drehbare Elektronendichtedarstellungen (Edukte) -->
+      <div style="margin-top:20px;">
+        <div class="heatmap-legend">
+          <span style="color:#dc2626; font-weight:700;">Rot (δ<sup>−</sup>): hohe Elektronendichte</span>
+          <div class="gradient-bar"></div>
+          <span style="color:#1d4ed8; font-weight:700;">Blau (δ<sup>+</sup>): niedrige Elektronendichte</span>
+        </div>
+
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:10px;">
           <h3 style="margin:0; font-size:1.08rem;">🌐 3D-Elektronendichteoberflächen der Edukte (zum Drehen ziehen)</h3>
           <div style="display:flex; align-items:center; gap:8px;">
@@ -1337,8 +1326,8 @@
       <!-- Interaktive Simulation: Protonen-Abspaltungs-Challenge in der Valenzstrichformel -->
       <div class="cleavage-arena">
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
-          <h3 style="margin:0; color:#1e3a8a; font-size:1.1rem;">⚡ Simulation: Spalte das Proton (H<sup>+</sup>) in der Valenzstrichformel ab!</h3>
-          <span class="tag task" id="badge-t21">0 / 2 Moleküle getestet</span>
+          <h3 style="margin:0; color:#1e3a8a; font-size:1.1rem;">⚡ Aufgabe 2.2: Spalte das Proton (H<sup>+</sup>) in der Valenzstrichformel ab!</h3>
+          <span class="tag task" id="badge-t22">0 / 2 Moleküle getestet</span>
         </div>
         <p style="margin:0 0 12px; font-size:0.93rem;">
           Wähle ein Molekül aus und tippe schnell auf den Button (oder direkt in die Valenzstrichformel), um die O−H-Bindung zu spalten und das Proton auf ein Wasser-Molekül zu übertragen. Beobachte dabei auch die <strong>nicht-bindenden Elektronenpaare</strong>!
@@ -1364,38 +1353,38 @@
         </div>
       </div>
 
-      <!-- Aufgabe 2.2: Kausalitäts-Check -->
+      <!-- Aufgabe 2.3: Kausalitäts-Check -->
       <div class="task-box">
         <h3>
-          <span>Aufgabe 2.2: Warum lässt sich das Proton bei Ethansäure so viel leichter abspalten?</span>
-          <span class="tag task" id="badge-t22">Offen</span>
+          <span>Aufgabe 2.3: Warum lässt sich das Proton bei Ethansäure so viel leichter abspalten?</span>
+          <span class="tag task" id="badge-t23">Offen</span>
         </h3>
         <div class="option-grid">
-          <button class="opt-btn" onclick="checkMC('2-2', this, false, 'Falsch: Die Alkylgruppe wirkt sogar schwach elektronenschiebend (ΔEN = 0,4 bei C−H), was allein genommen die Polarisierung der O−H-Bindung verringern würde.')">
+          <button class="opt-btn" onclick="checkMC('2-3', this, false, 'Falsch: Die Alkylgruppe wirkt sogar schwach elektronenschiebend (ΔEN = 0,4 bei C−H), was allein genommen die Polarisierung der O−H-Bindung verringern würde.')">
             Weil die Alkylgruppe (CH<sub>3</sub>−) Elektronen stark aus der O−H-Bindung abzieht.
           </button>
-          <button class="opt-btn" onclick="checkMC('2-2', this, true, 'Genau! Das Sauerstoff-Atom der Carbonylgruppe (C=O) zieht Elektronen aus der O−H-Bindung an und polarisiert sie dadurch stark.')">
+          <button class="opt-btn" onclick="checkMC('2-3', this, true, 'Genau! Das Sauerstoff-Atom der Carbonylgruppe (C=O) zieht Elektronen aus der O−H-Bindung an und polarisiert sie dadurch stark.')">
             Weil das Sauerstoff-Atom der Carbonylgruppe (C=O) Elektronen aus der O−H-Bindung anzieht und diese dadurch stark polarisiert.
           </button>
-          <button class="opt-btn" onclick="checkMC('2-2', this, false, 'Falsch: Das Sauerstoffatom der Hydroxygruppe hat in beiden Molekülen dieselbe Elektronegativität (3,5).')">
+          <button class="opt-btn" onclick="checkMC('2-3', this, false, 'Falsch: Das Sauerstoffatom der Hydroxygruppe hat in beiden Molekülen dieselbe Elektronegativität (3,5).')">
             Weil das Sauerstoff-Atom der Hydroxy-Gruppe in Carbonsäuren eine höhere Elektronegativität hat als in Alkoholen.
           </button>
         </div>
-        <div class="feedback" id="fb-2-2"></div>
+        <div class="feedback" id="fb-2-3"></div>
       </div>
     </div>
 
     <div class="nav-footer">
       <button class="btn secondary" onclick="goPhase(1)">← Zurück</button>
-      <button class="btn" onclick="goPhase(3)">Weiter zu Phase 3: Mesomeriestabilisierung des Anions →</button>
+      <button class="btn" onclick="goPhase(3)">Weiter zu Lektion 3: Mesomeriestabilisierung →</button>
     </div>
   </section>
 
-  <!-- ==================== PHASE 3 ==================== -->
+  <!-- ==================== LEKTION 3 ==================== -->
   <section class="phase-section" id="phase-3">
     <div class="card">
       <div class="card-header">
-        <h2>Phase 3: Mesomeriestabilisierung des Anions</h2>
+        <h2>Lektion 3: Mesomeriestabilisierung</h2>
         <span class="tag">Teilchenebene</span>
       </div>
 
@@ -1434,10 +1423,10 @@
         </div>
       </div>
 
-      <!-- Interaktive Mesomerie-Werkstatt (Bedienfelder & Pfeile an Grenzformel I, Ergebnis bei Grenzformel II, eckige Klammern!) -->
+      <!-- Interaktive Mesomerie-Werkstatt -->
       <div class="card" style="background:#f8fafc; border:1.5px solid #cbd5e1;">
         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
-          <h3 style="margin:0;">🔬 Mesomerie-Werkstatt</h3>
+          <h3 style="margin:0;">🔬 Aufgabe 3.1: Mesomerie-Werkstatt</h3>
           <span class="tag task" id="badge-t31">0 / 2 Ionen untersucht</span>
         </div>
 
@@ -1458,47 +1447,43 @@
               <path d="M36,24 L18,24 L18,252 L36,252" fill="none" stroke="#1e293b" stroke-width="3.5" stroke-linecap="square" />
               <path d="M664,24 L682,24 L682,252 L664,252" fill="none" stroke="#1e293b" stroke-width="3.5" stroke-linecap="square" />
 
-              <!-- ==================== GRENZFORMEL I (links: Bedienfelder & Mesomeriepfeile!) ==================== -->
+              <!-- GRENZFORMEL I (links: Bedienfelder & Mesomeriepfeile) -->
               <text x="168" y="28" font-size="14" font-weight="700" fill="#1d4ed8" text-anchor="middle">Grenzformel I (Elektronen klappen)</text>
 
-              <!-- H3C -->
               <text x="68" y="140" font-size="18" font-weight="700" text-anchor="middle">H<tspan dy="4" font-size="13">3</tspan><tspan dy="-4">C</tspan></text>
               <line x1="98" y1="134" x2="146" y2="134" stroke="#1e293b" stroke-width="3" />
               <text x="158" y="140" font-size="20" font-weight="700" text-anchor="middle">C</text>
 
               <!-- Obere C=O Doppelbindung -->
               <line x1="168" y1="121" x2="208" y2="79" stroke="#1e293b" stroke-width="3" />
-              <!-- 2. Bindung der oberen C=O Doppelbindung (wird in Schritt 2 auf oberes O gezogen!) -->
               <g id="gf1-top-pibond-group">
                 <line id="gf1-top-pibond" x1="175" y1="128" x2="215" y2="86" stroke="#1e293b" stroke-width="3" stroke-linecap="round" />
                 <rect x="170" y="84" width="48" height="46" fill="transparent" />
               </g>
 
-              <!-- Oberes O-Atom (Drop-Ziel in Schritt 2) -->
+              <!-- Oberes O-Atom -->
               <circle id="gf1-top-o-dropzone" cx="226" cy="71" r="26" fill="transparent" stroke="transparent" stroke-width="2.5" stroke-dasharray="4,3" />
               <text x="226" y="77" font-size="20" font-weight="700" text-anchor="middle">O</text>
-              <!-- 2 nicht-bindende Elektronenpaare ordentlich außen um oberes O -->
               <line x1="208" y1="53" x2="225" y2="45" stroke="#1e293b" stroke-width="2.8" stroke-linecap="round" />
               <line x1="242" y1="62" x2="250" y2="79" stroke="#1e293b" stroke-width="2.8" stroke-linecap="round" />
 
-              <!-- Untere C-O Einfachbindung (Drop-Ziel in Schritt 1) -->
+              <!-- Untere C-O Einfachbindung -->
               <line x1="170" y1="147" x2="210" y2="189" stroke="#1e293b" stroke-width="3" />
               <ellipse id="gf1-bot-dropzone" cx="192" cy="166" rx="28" ry="18" transform="rotate(46 192 166)" fill="rgba(29,78,216,0.10)" stroke="#1d4ed8" stroke-width="2" stroke-dasharray="4,3" />
 
-              <!-- Unteres O-Atom mit 3 nicht-bindenden Elektronenpaaren ordentlich angeordnet (oben-rechts, unten-rechts, unten-links – keines an der Bindung!) -->
+              <!-- Unteres O-Atom -->
               <text x="226" y="201" font-size="20" font-weight="700" fill="#dc2626" text-anchor="middle">O</text>
               <text x="249" y="182" font-size="16" font-weight="700" fill="#dc2626">⊖</text>
-              <!-- 2 feste freie Elektronenpaare am unteren O -->
               <line x1="245" y1="192" x2="245" y2="212" stroke="#1e293b" stroke-width="2.8" stroke-linecap="round" />
               <line x1="216" y1="220" x2="236" y2="220" stroke="#1e293b" stroke-width="2.8" stroke-linecap="round" />
 
-              <!-- 3. nicht-bindendes Elektronenpaar oben am O-Atom (ziehbares Bedienfeld in Schritt 1!) -->
+              <!-- Ziehbares nicht-bindendes Elektronenpaar -->
               <g id="gf1-bot-lp-drag" style="cursor:grab;">
                 <rect x="209" y="165" width="34" height="22" rx="6" fill="rgba(29,78,216,0.18)" stroke="#1d4ed8" stroke-width="2" />
                 <line x1="216" y1="176" x2="236" y2="176" stroke="#1d4ed8" stroke-width="3.4" stroke-linecap="round" />
               </g>
 
-              <!-- Animierte gebogene Mesomerie-Elektronenpfeile an Grenzformel I -->
+              <!-- Gebogene Mesomeriepfeile an Grenzformel I -->
               <g id="gf1-arrow-step1" opacity="0" style="transition: opacity 0.35s;">
                 <path d="M218,173 Q207,153 196,160" fill="none" stroke="#1d4ed8" stroke-width="2.8" />
                 <polygon points="192,163 200,163 196,155" fill="#1d4ed8" />
@@ -1511,43 +1496,31 @@
               <!-- Mesomeriepfeil in der Mitte -->
               <text x="350" y="142" font-size="30" font-weight="700" fill="#1d4ed8" text-anchor="middle">⟷</text>
 
-              <!-- ==================== GRENZFORMEL II (rechts: Ergebnis-Anzeige!) ==================== -->
+              <!-- GRENZFORMEL II (rechts: Ergebnis-Anzeige) -->
               <text x="528" y="28" font-size="14" font-weight="700" fill="#475569" text-anchor="middle">Grenzformel II (Ergebnis)</text>
 
-              <!-- H3C -->
               <text x="424" y="140" font-size="18" font-weight="700" text-anchor="middle">H<tspan dy="4" font-size="13">3</tspan><tspan dy="-4">C</tspan></text>
               <line x1="454" y1="134" x2="502" y2="134" stroke="#1e293b" stroke-width="3" />
 
-              <!-- Zentrales C-Atom (zeigt Edelgasregel-Verletzung nach Schritt 1!) -->
               <circle id="gf2-c-octet-ring" cx="514" cy="134" r="22" fill="transparent" stroke="transparent" stroke-width="3.5" />
               <text x="514" y="140" font-size="20" font-weight="700" text-anchor="middle">C</text>
 
-              <!-- Obere C-O Bindung in Grenzformel II -->
               <line x1="524" y1="121" x2="564" y2="79" stroke="#1e293b" stroke-width="3" />
-              <!-- 2. Bindung oben (verschwindet in Schritt 2) -->
               <line id="gf2-top-pibond" x1="531" y1="128" x2="571" y2="86" stroke="#1e293b" stroke-width="3" stroke-linecap="round" />
 
-              <!-- Oberes O-Atom in Grenzformel II -->
               <text id="gf2-top-o-text" x="582" y="77" font-size="20" font-weight="700" fill="#1e293b" text-anchor="middle">O</text>
               <text id="gf2-top-o-charge" x="604" y="57" font-size="16" font-weight="700" fill="#dc2626" opacity="0">⊖</text>
-              <!-- 2 reguläre freie Elektronenpaare am oberen O -->
               <line x1="564" y1="53" x2="581" y2="45" stroke="#1e293b" stroke-width="2.8" stroke-linecap="round" />
               <line x1="598" y1="62" x2="606" y2="79" stroke="#1e293b" stroke-width="2.8" stroke-linecap="round" />
-              <!-- 3. freies Elektronenpaar am oberen O (erscheint nach Schritt 2!) -->
               <line id="gf2-top-o-newlp" x1="562" y1="63" x2="562" y2="81" stroke="#15803d" stroke-width="3" stroke-linecap="round" opacity="0" />
 
-              <!-- Untere C-O Bindung in Grenzformel II -->
               <line x1="526" y1="147" x2="566" y2="189" stroke="#1e293b" stroke-width="3" />
-              <!-- 2. Bindung unten (erscheint nach Schritt 1!) -->
               <line id="gf2-bot-pibond" x1="533" y1="140" x2="573" y2="182" stroke="#1d4ed8" stroke-width="3.2" stroke-linecap="round" opacity="0" />
 
-              <!-- Unteres O-Atom in Grenzformel II -->
               <text id="gf2-bot-o-text" x="582" y="201" font-size="20" font-weight="700" fill="#dc2626" text-anchor="middle">O</text>
               <text id="gf2-bot-o-charge" x="605" y="182" font-size="16" font-weight="700" fill="#dc2626">⊖</text>
-              <!-- 2 feste freie Elektronenpaare am unteren O -->
               <line x1="601" y1="192" x2="601" y2="212" stroke="#1e293b" stroke-width="2.8" stroke-linecap="round" />
               <line x1="572" y1="220" x2="592" y2="220" stroke="#1e293b" stroke-width="2.8" stroke-linecap="round" />
-              <!-- 3. freies Elektronenpaar oben am unteren O (verschwindet nach Schritt 1!) -->
               <line id="gf2-bot-o-thirdlp" x1="572" y1="176" x2="592" y2="176" stroke="#1e293b" stroke-width="2.8" stroke-linecap="round" />
 
               <!-- Live-Geister-Elektronenpaar während des Ziehens -->
@@ -1563,13 +1536,11 @@
             </div>
           </div>
 
-          <!-- Warnung bei 5 Bindungen am C-Atom -->
           <div class="alert-octet" id="gf2OctetWarning">
             ⚠️ <strong>Problem – Edelgasregel verletzt!</strong><br />
             In Grenzformel II hat das mittlere Kohlenstoff-Atom jetzt <strong>5 Bindungen (10 Valenzelektronen)</strong>! Ziehe nun in <strong>Grenzformel I</strong> eines der bindenden Elektronenpaare der oberen C=O-Doppelbindung auf das obere Sauerstoff-Atom, um das Problem zu lösen.
           </div>
 
-          <!-- Erfolgsmeldung nach Abschluss -->
           <div class="success-meso" id="gf2CompleteBox">
             ✓ <strong>Grenzformel II ist fertig!</strong> Alle Atome erfüllen wieder die Edelgasregel. Die negative Ladung ist gleichmäßig über beide Sauerstoff-Atome verteilt (delokalisiert) – das Ethanoat-Ion wird dadurch <strong>mesomeriestabilisiert</strong> und energieärmer!
           </div>
@@ -1587,7 +1558,7 @@
               <path d="M32,22 L16,22 L16,222 L32,222" fill="none" stroke="#1e293b" stroke-width="3.5" stroke-linecap="square" />
               <path d="M668,22 L684,22 L684,222 L668,222" fill="none" stroke="#1e293b" stroke-width="3.5" stroke-linecap="square" />
 
-              <!-- LINKS: Ausgangsformel (Bedienfeld) -->
+              <!-- LINKS: Ausgangsformel -->
               <text x="180" y="26" font-size="13.5" font-weight="700" fill="#1d4ed8" text-anchor="middle">Ethanolat-Ion (Elektronen klappen)</text>
               <text x="64" y="130" font-size="17" font-weight="700" text-anchor="middle">H<tspan dy="4" font-size="12">3</tspan><tspan dy="-4">C</tspan></text>
               <line x1="92" y1="124" x2="142" y2="124" stroke="#1e293b" stroke-width="3" />
@@ -1598,33 +1569,27 @@
               <line x1="156" y1="142" x2="156" y2="180" stroke="#1e293b" stroke-width="3" />
               <text x="156" y="196" font-size="17" font-weight="700" text-anchor="middle">H</text>
 
-              <!-- C-O Bindung (Drop-Ziel) -->
               <line x1="174" y1="124" x2="246" y2="124" stroke="#1e293b" stroke-width="3" />
               <rect id="et-co-dropzone" x="184" y="106" width="52" height="34" rx="8" fill="rgba(29,78,216,0.10)" stroke="#1d4ed8" stroke-width="2" stroke-dasharray="4,3" />
 
-              <!-- O-Atom links -->
               <text x="264" y="130" font-size="19" font-weight="700" fill="#dc2626" text-anchor="middle">O</text>
               <text x="285" y="110" font-size="16" font-weight="700" fill="#dc2626">⊖</text>
-              <!-- 2 feste nicht-bindende Elektronenpaare (rechts & unten) -->
               <line x1="283" y1="115" x2="283" y2="134" stroke="#1e293b" stroke-width="2.8" stroke-linecap="round" />
               <line x1="255" y1="149" x2="273" y2="149" stroke="#1e293b" stroke-width="2.8" stroke-linecap="round" />
 
-              <!-- Ziehbares oberes nicht-bindendes Elektronenpaar -->
               <g id="et-lp-drag" style="cursor:grab;">
                 <rect x="248" y="85" width="32" height="22" rx="6" fill="rgba(29,78,216,0.18)" stroke="#1d4ed8" stroke-width="2" />
                 <line x1="255" y1="96" x2="273" y2="96" stroke="#1d4ed8" stroke-width="3.4" stroke-linecap="round" />
               </g>
 
-              <!-- Gebogener Elektronenpfeil links -->
               <g id="et-arrow-step1" opacity="0" style="transition: opacity 0.35s;">
                 <path d="M255,93 Q234,83 215,110" fill="none" stroke="#dc2626" stroke-width="2.8" />
                 <polygon points="212,114 220,110 214,105" fill="#dc2626" />
               </g>
 
-              <!-- Mesomeriepfeil -->
               <text x="350" y="130" font-size="28" font-weight="700" fill="#94a3b8" text-anchor="middle">⟷</text>
 
-              <!-- RECHTS: Ergebnis (mit unlösbarer Edelgasregel-Verletzung!) -->
+              <!-- RECHTS: Ergebnis -->
               <text x="520" y="26" font-size="13.5" font-weight="700" fill="#475569" text-anchor="middle">Ergebnis (ungültig!)</text>
               <text x="410" y="130" font-size="17" font-weight="700" text-anchor="middle">H<tspan dy="4" font-size="12">3</tspan><tspan dy="-4">C</tspan></text>
               <line x1="438" y1="124" x2="488" y2="124" stroke="#1e293b" stroke-width="3" />
@@ -1645,7 +1610,6 @@
               <line x1="601" y1="149" x2="619" y2="149" stroke="#1e293b" stroke-width="2.8" stroke-linecap="round" />
               <line id="et-o-thirdlp" x1="601" y1="96" x2="619" y2="96" stroke="#1e293b" stroke-width="2.8" stroke-linecap="round" />
 
-              <!-- Live-Geister-Elektronenpaar -->
               <g id="et-drag-ghost" opacity="0" pointer-events="none">
                 <circle cx="0" cy="0" r="14" fill="rgba(29,78,216,0.22)" stroke="#1d4ed8" stroke-width="2" />
                 <line x1="-9" y1="0" x2="9" y2="0" stroke="#1d4ed8" stroke-width="3.5" stroke-linecap="round" />
@@ -1688,15 +1652,15 @@
 
     <div class="nav-footer">
       <button class="btn secondary" onclick="goPhase(2)">← Zurück</button>
-      <button class="btn" onclick="goPhase(4)">Weiter zu Phase 4: Hefteintrag &amp; Exkurs →</button>
+      <button class="btn" onclick="goPhase(4)">Weiter zu Lektion 4: Hefteintrag &amp; Exkurs →</button>
     </div>
   </section>
 
-  <!-- ==================== PHASE 4 ==================== -->
+  <!-- ==================== LEKTION 4 ==================== -->
   <section class="phase-section" id="phase-4">
     <div class="card">
       <div class="card-header">
-        <h2>Phase 4: Zusammenfassung &amp; Hefteintrag sichern</h2>
+        <h2>Lektion 4: Hefteintrag &amp; Exkurs</h2>
         <span class="tag">Ergebnissicherung</span>
       </div>
       <p>
@@ -1748,7 +1712,6 @@
           <strong>Teilchenebene (Erklärung):</strong> Ethansäure-Moleküle reagieren als Säure mit Wasser-Molekülen; Ethanol-Moleküle reagieren nicht bzw. kaum als Säure.
         </p>
 
-        <!-- Erklärung 1 (oben) -->
         <div class="nb-section-box">
           <h4>1. Bindungspolarität</h4>
           <div class="grid-2">
@@ -1767,7 +1730,6 @@
           </div>
         </div>
 
-        <!-- Erklärung 2 (darunter) -->
         <div class="nb-section-box">
           <h4>2. Stabilität des Anions</h4>
           <div class="grid-2">
@@ -1827,7 +1789,7 @@
 <script>
   /* ================= STATE & SCORE ================= */
   const solvedTasks = new Set();
-  const TOTAL_TASKS = 9;
+  const TOTAL_TASKS = 10;
 
   function markSolved(taskId, phaseNum) {
     if (!solvedTasks.has(taskId)) {
@@ -1846,7 +1808,7 @@
   function updatePhaseCheck(p) {
     const map = {
       1: ['1-1', '1-2', '1-3'],
-      2: ['2-1', '2-2'],
+      2: ['2-1', '2-2', '2-3'],
       3: ['3-1', '3-2'],
       4: ['4-1']
     };
@@ -1883,7 +1845,7 @@
     }
   }
 
-  /* ================= PHASE 1: VIRTUAL LAB (STOFFEBENE) ================= */
+  /* ================= LEKTION 1: VIRTUAL LAB (STOFFEBENE) ================= */
   let indicatorAdded = { acid: false, alc: false };
 
   function addIndicatorSingle(which) {
@@ -1931,13 +1893,12 @@
     document.getElementById('phMeterBtn').disabled = true;
   }
 
-  /* ================= PHASE 1: EQUILIBRIUM PARTICLE SIM (MIT H2O & OXONIUM-ANZEIGE OHNE PH) ================= */
+  /* ================= LEKTION 1: EQUILIBRIUM PARTICLE SIM ================= */
   const canvasAcid = document.getElementById('canvas-acid');
   const ctxAcid = canvasAcid.getContext('2d');
   const canvasAlc = document.getElementById('canvas-alc');
   const ctxAlc = canvasAlc.getContext('2d');
 
-  // Chamber A: 4 Ethansäure-Einheiten (2 bereits dissoziiert + 2 intakt) + 14 H2O-Moleküle
   const acidParticles = [];
   for (let i = 0; i < 4; i++) {
     acidParticles.push({
@@ -1976,7 +1937,6 @@
 
     intact.type = 'anion';
     water.type = 'h3o';
-    // Oxonium-Ionen reagieren bei Ethansäure nur sehr langsam zurück (~900 Frames ≈ 15 Sekunden)
     acidExtraPairs.push({ anion: intact, h3o: water, frames: 900 });
     updateAcidH3OStatus(false);
   }
@@ -1991,7 +1951,6 @@
     }
   }
 
-  // Chamber B: 4 Ethanol-Moleküle + 16 H2O-Moleküle
   const alcParticles = [];
   for (let i = 0; i < 4; i++) {
     alcParticles.push({
@@ -2023,7 +1982,6 @@
     target.type = 'alkoxide';
     water.type = 'h3o';
     alcHadReaction = true;
-    // Etwas langsamere Rückreaktion (~340 Frames ≈ 5,7 Sekunden), mehrere gleichzeitig möglich
     alcTransientPairs.push({ anion: target, h3o: water, frames: 340 });
     updateAlcH3OStatus();
   }
@@ -2099,7 +2057,6 @@
   }
 
   function animateChambers() {
-    // 1. Acid Chamber
     ctxAcid.clearRect(0, 0, canvasAcid.width, canvasAcid.height);
     for (let i = acidExtraPairs.length - 1; i >= 0; i--) {
       const pair = acidExtraPairs[i];
@@ -2122,7 +2079,6 @@
     stepParticles(acidParticles, canvasAcid.width, canvasAcid.height);
     acidParticles.forEach(p => drawParticle(ctxAcid, p));
 
-    // 2. Alcohol Chamber
     ctxAlc.clearRect(0, 0, canvasAlc.width, canvasAlc.height);
     for (let i = alcTransientPairs.length - 1; i >= 0; i--) {
       const pair = alcTransientPairs[i];
@@ -2149,82 +2105,336 @@
   }
   animateChambers();
 
-  /* ================= PHASE 2: LOCAL BOND POLARIZATION ANIMATION (NO MIGRATION!) ================= */
-  let pullAnimActive = false;
-  let etPushAnimActive = false;
-  let pulseTheta = 0;
+  /* ================= LEKTION 2: BALKEN-DARSTELLUNG & DRAG-AND-DROP MAGNETEN ================= */
+  const SVG_NS = 'http://www.w3.org/2000/svg';
 
-  function toggleElectronPull() {
-    pullAnimActive = !pullAnimActive;
-    const btn = document.getElementById('pullBtnAcid');
-    const pulses = document.getElementById('electron-pulses');
-    const banner = document.getElementById('pull-banner');
-    const ohBond = document.getElementById('ac-oh-bond');
-    const hGroup = document.getElementById('ac-h-group');
-    const hDelta = document.getElementById('ac-h-delta');
+  function createSvgEl(tag, attrs = {}) {
+    const el = document.createElementNS(SVG_NS, tag);
+    for (const [k, v] of Object.entries(attrs)) {
+      el.setAttribute(k, v);
+    }
+    return el;
+  }
 
-    if (pullAnimActive) {
-      btn.textContent = '⏹ Darstellung ausblenden';
-      pulses.setAttribute('opacity', '1');
-      banner.setAttribute('opacity', '1');
-      ohBond.setAttribute('x2', '294');
-      ohBond.setAttribute('stroke', '#3b82f6');
-      ohBond.setAttribute('stroke-dasharray', '4,3');
-      hGroup.setAttribute('transform', 'translate(12, 0)');
-      hDelta.setAttribute('x', '332');
-      hDelta.textContent = 'δδ+';
+  function buildMagnetGraphic(groupEl) {
+    groupEl.innerHTML = '';
+    // Shadow / Hitbox
+    groupEl.appendChild(createSvgEl('rect', {
+      x: -24, y: -15, width: 48, height: 30, rx: 7,
+      fill: '#ffffff', stroke: '#334155', 'stroke-width': 1.8
+    }));
+    // Red North Pole (left)
+    groupEl.appendChild(createSvgEl('path', {
+      d: 'M-17,-14 L-1,-14 L-1,14 L-17,14 A6,6 0 0,1 -23,8 L-23,-8 A6,6 0 0,1 -17,-14 Z',
+      fill: '#dc2626'
+    }));
+    // Blue South Pole (right)
+    groupEl.appendChild(createSvgEl('path', {
+      d: 'M1,-14 L17,-14 A6,6 0 0,1 23,-8 L23,8 A6,6 0 0,1 17,14 L1,14 Z',
+      fill: '#1d4ed8'
+    }));
+    // Center divider & label
+    groupEl.appendChild(createSvgEl('line', {
+      x1: 0, y1: -14, x2: 0, y2: 14, stroke: '#ffffff', 'stroke-width': 1.5
+    }));
+    const txt = createSvgEl('text', {
+      x: 0, y: 1, 'font-size': 10.5, 'font-weight': '700',
+      fill: '#ffffff', 'text-anchor': 'middle', 'dominant-baseline': 'central',
+      'pointer-events': 'none'
+    });
+    txt.textContent = 'EN 3,5';
+    groupEl.appendChild(txt);
+  }
+
+  // Draw a single bond bar ("Balken") with 2 electrons inside at fraction t in [0, 1] from (x1,y1) to (x2,y2)
+  function renderBondBar(container, x1, y1, x2, y2, t, perpOffset = 0, highlightColor = null) {
+    const dx = x2 - x1;
+    const dy = y2 - y1;
+    const len = Math.hypot(dx, dy) || 1;
+    const ux = dx / len;
+    const uy = dy / len;
+    const nx = -uy;
+    const ny = ux;
+
+    // Trim bar endpoints slightly so they sit cleanly between atom letters
+    const pad = 15;
+    const bx1 = x1 + ux * pad + nx * perpOffset;
+    const by1 = y1 + uy * pad + ny * perpOffset;
+    const bx2 = x2 - ux * pad + nx * perpOffset;
+    const by2 = y2 - uy * pad + ny * perpOffset;
+
+    const barLen = Math.max(18, Math.hypot(bx2 - bx1, by2 - by1));
+    const angleDeg = (Math.atan2(by2 - by1, bx2 - bx1) * 180) / Math.PI;
+    const barH = 12.5;
+
+    const g = createSvgEl('g', {
+      transform: `translate(${bx1.toFixed(2)}, ${by1.toFixed(2)}) rotate(${angleDeg.toFixed(2)})`
+    });
+
+    // Bar body
+    g.appendChild(createSvgEl('rect', {
+      x: 0,
+      y: -barH / 2,
+      width: barLen.toFixed(2),
+      height: barH,
+      rx: barH / 2,
+      fill: highlightColor ? 'rgba(239, 68, 68, 0.12)' : '#f1f5f9',
+      stroke: highlightColor || '#64748b',
+      'stroke-width': highlightColor ? 2 : 1.7
+    }));
+
+    // 2 electrons inside the bar at fraction t (with margin from rounded ends)
+    const innerPad = 6.5;
+    const usable = Math.max(4, barLen - 2 * innerPad);
+    const ex = innerPad + Math.max(0, Math.min(1, t)) * usable;
+
+    [-2.8, 2.8].forEach(ey => {
+      g.appendChild(createSvgEl('circle', {
+        cx: ex.toFixed(2),
+        cy: ey,
+        r: 3.3,
+        fill: '#1e3a8a'
+      }));
+      g.appendChild(createSvgEl('circle', {
+        cx: (ex - 1.0).toFixed(2),
+        cy: ey - 1.0,
+        r: 1.0,
+        fill: '#ffffff'
+      }));
+    });
+
+    container.appendChild(g);
+  }
+
+  // State for Magnets in Lektion 2
+  const magState = {
+    ac: {
+      svg: document.getElementById('svg-acetic-bars'),
+      layer: document.getElementById('layer-bars-ac'),
+      targets: {
+        carb: { x: 236, y: 96 },
+        hyd: { x: 238, y: 216 }
+      },
+      magnets: [
+        { id: 'mag-ac-1', homeX: 216, homeY: 30, x: 216, y: 30, snappedTo: null },
+        { id: 'mag-ac-2', homeX: 276, homeY: 30, x: 276, y: 30, snappedTo: null }
+      ]
+    },
+    et: {
+      svg: document.getElementById('svg-ethanol-bars'),
+      layer: document.getElementById('layer-bars-et'),
+      targets: {
+        hyd: { x: 242, y: 216 }
+      },
+      magnets: [
+        { id: 'mag-et-1', homeX: 222, homeY: 30, x: 222, y: 30, snappedTo: null }
+      ]
+    }
+  };
+
+  let activeMagnetDrag = null;
+
+  function computeInfluence(molKey, targetKey) {
+    const group = magState[molKey];
+    const target = group.targets[targetKey];
+    let maxInf = 0;
+    group.magnets.forEach(m => {
+      if (m.snappedTo === targetKey) {
+        maxInf = 1;
+      } else {
+        const d = Math.hypot(m.x - target.x, m.y - target.y);
+        // Smooth continuous magnetic pull starting within 135 px of the O atom!
+        if (d < 135) {
+          const inf = Math.pow(1 - d / 135, 1.35);
+          if (inf > maxInf) maxInf = inf;
+        }
+      }
+    });
+    return maxInf;
+  }
+
+  function updateAceticBars() {
+    const layer = magState.ac.layer;
+    layer.innerHTML = '';
+
+    const fCarb = computeInfluence('ac', 'carb'); // 0..1 pull at Carbonyl-O
+    const fHyd = computeInfluence('ac', 'hyd');   // 0..1 pull at Hydroxy-O
+
+    // Unpolar C-H and C-C bars: 2 electrons sit centered at t = 0.50
+    renderBondBar(layer, 32, 158, 98, 158, 0.50);   // H1 - C1
+    renderBondBar(layer, 98, 92, 98, 158, 0.50);    // H2 - C1
+    renderBondBar(layer, 98, 224, 98, 158, 0.50);   // H3 - C1
+    renderBondBar(layer, 98, 158, 182, 158, 0.50);  // C1 - C2
+
+    // C2 = O_carb double bond (2 parallel bars): strongly attracted to Carbonyl-O
+    const tCarb = 0.50 + 0.32 * fCarb;
+    const carbColor = fCarb > 0.15 ? '#dc2626' : null;
+    renderBondBar(layer, 182, 158, 236, 96, tCarb, -7.2, carbColor);
+    renderBondBar(layer, 182, 158, 236, 96, tCarb, 7.2, carbColor);
+
+    // C2 - O_hyd single bond: attracted toward Hydroxy-O
+    const tCO = 0.50 + 0.25 * fHyd;
+    renderBondBar(layer, 182, 158, 238, 216, tCO, 0, fHyd > 0.15 ? '#dc2626' : null);
+
+    // O_hyd - H bond:
+    // 1) Directly pulled toward O_hyd (t goes from 0.50 down to 0.28)
+    // 2) Additionally pulled even further toward O_hyd by the 2nd magnet on O_carb
+    //    (somewhat weaker pull because 2 bonds away: additional shift -0.14 down to 0.14!)
+    const tOH = 0.50 - 0.22 * fHyd - 0.14 * fCarb;
+    const ohHighlight = (fHyd > 0.15 || fCarb > 0.15) ? '#dc2626' : null;
+    renderBondBar(layer, 238, 216, 322, 216, tOH, 0, ohHighlight);
+
+    // Update partial charges (single δ+ / δ− only)
+    document.getElementById('delta-ac-carb').setAttribute('opacity', fCarb.toFixed(2));
+    document.getElementById('delta-ac-c2').setAttribute('opacity', Math.max(fCarb, fHyd * 0.7).toFixed(2));
+    document.getElementById('delta-ac-hyd').setAttribute('opacity', Math.max(fHyd, fCarb * 0.5).toFixed(2));
+    document.getElementById('delta-ac-h').setAttribute('opacity', Math.max(fHyd, fCarb * 0.65).toFixed(2));
+
+    // Update status text
+    const snappedCarb = magState.ac.magnets.some(m => m.snappedTo === 'carb');
+    const snappedHyd = magState.ac.magnets.some(m => m.snappedTo === 'hyd');
+    const statusEl = document.getElementById('status-mag-ac');
+
+    if (snappedCarb && snappedHyd) {
+      statusEl.innerHTML = '✓ <strong>Beide Magneten platziert!</strong> Der 2. Magnet am Carbonyl-O zieht die Elektronen in der O−H-Bindung (etwas schwächer, da 2 Bindungen entfernt) <strong>noch weiter zum O-Atom</strong>.';
+    } else if (snappedHyd) {
+      statusEl.innerHTML = '🧲 <strong>1. Magnet am Hydroxy-O:</strong> Die Elektronen der O−H-Bindung wandern zum O-Atom. Platziere jetzt den <strong>2. Magneten am Carbonyl-O</strong>!';
+    } else if (snappedCarb) {
+      statusEl.innerHTML = '🧲 <strong>Magnet am Carbonyl-O:</strong> Zieht die C=O-Elektronen stark und die O−H-Elektronen (2 Bindungen entfernt) leicht an. Platziere noch den <strong>Magneten am Hydroxy-O</strong>!';
     } else {
-      btn.textContent = '🧲 Elektronenverschiebung in den Bindungen zeigen';
-      pulses.setAttribute('opacity', '0');
-      banner.setAttribute('opacity', '0');
-      ohBond.setAttribute('x2', '282');
-      ohBond.setAttribute('stroke', '#1e293b');
-      ohBond.removeAttribute('stroke-dasharray');
-      hGroup.setAttribute('transform', 'translate(0, 0)');
-      hDelta.setAttribute('x', '320');
-      hDelta.textContent = 'δ+';
-      document.getElementById('halo-co').setAttribute('r', '24');
-      document.getElementById('halo-co').setAttribute('opacity', '0.14');
-      document.getElementById('halo-h').setAttribute('cx', '296');
-      document.getElementById('halo-h').setAttribute('r', '20');
-      document.getElementById('halo-h').setAttribute('opacity', '0.16');
+      statusEl.innerHTML = 'Noch keine Magneten platziert: Alle Bindungselektronen liegen mittig in den Balken.';
     }
   }
 
-  function toggleEthanolPush() {
-    etPushAnimActive = !etPushAnimActive;
-    const btn = document.getElementById('pushBtnEthanol');
-    document.getElementById('et-pull-banner').setAttribute('opacity', etPushAnimActive ? '1' : '0');
-    document.getElementById('et-push-pulses').setAttribute('opacity', etPushAnimActive ? '1' : '0');
-    btn.textContent = etPushAnimActive
-      ? '⏹ Darstellung ausblenden'
-      : '🔄 Elektronenschiebenden Alkyl-Effekt zeigen';
+  function updateEthanolBars() {
+    const layer = magState.et.layer;
+    layer.innerHTML = '';
+
+    const fHyd = computeInfluence('et', 'hyd');
+
+    // Unpolar C-H and C-C bars: 2 electrons centered at t = 0.50
+    renderBondBar(layer, 32, 158, 98, 158, 0.50);   // H1 - C1
+    renderBondBar(layer, 98, 92, 98, 158, 0.50);    // H2 - C1
+    renderBondBar(layer, 98, 224, 98, 158, 0.50);   // H3 - C1
+    renderBondBar(layer, 98, 158, 180, 158, 0.50);  // C1 - C2
+    renderBondBar(layer, 180, 92, 180, 158, 0.50);  // H4 - C2
+    renderBondBar(layer, 160, 222, 180, 158, 0.50); // H5 - C2
+
+    // C2 - O_hyd single bond
+    const tCO = 0.50 + 0.22 * fHyd;
+    renderBondBar(layer, 180, 158, 242, 216, tCO, 0, fHyd > 0.15 ? '#dc2626' : null);
+
+    // O_hyd - H bond: shifts moderately toward O_hyd (from 0.50 to 0.30; no 2nd magnet!)
+    const tOH = 0.50 - 0.20 * fHyd;
+    renderBondBar(layer, 242, 216, 322, 216, tOH, 0, fHyd > 0.15 ? '#dc2626' : null);
+
+    document.getElementById('delta-et-hyd').setAttribute('opacity', fHyd.toFixed(2));
+    document.getElementById('delta-et-h').setAttribute('opacity', fHyd.toFixed(2));
+
+    const snappedHyd = magState.et.magnets.some(m => m.snappedTo === 'hyd');
+    const statusEl = document.getElementById('status-mag-et');
+    if (snappedHyd) {
+      statusEl.innerHTML = '✓ <strong>Magnet platziert:</strong> Ohne zweites O-Atom werden die O−H-Elektronen deutlich <strong>weniger weit</strong> zum O-Atom gezogen als bei Ethansäure!';
+    } else {
+      statusEl.innerHTML = 'Noch kein Magnet platziert: Alle Bindungselektronen liegen mittig in den Balken.';
+    }
   }
 
-  function animatePolarizationLoop() {
-    pulseTheta += 0.05;
-    const s = 0.5 + 0.5 * Math.sin(pulseTheta); // smooth 0..1 pulsation in place
-
-    if (pullAnimActive) {
-      // Gently pulse local asymmetric bond clouds & partial charge halos in place
-      document.getElementById('halo-co').setAttribute('r', 27 + s * 5);
-      document.getElementById('halo-co').setAttribute('opacity', 0.20 + s * 0.12);
-      document.getElementById('halo-h').setAttribute('cx', '308');
-      document.getElementById('halo-h').setAttribute('r', 23 + s * 5);
-      document.getElementById('halo-h').setAttribute('opacity', 0.20 + s * 0.12);
-
-      document.getElementById('cloud-ac-oh').setAttribute('rx', 13 + s * 3);
-      document.getElementById('cloud-ac-co').setAttribute('rx', 13 + s * 3);
-      document.getElementById('cloud-ac-carbonyl').setAttribute('rx', 15 + s * 3.5);
+  function updateMagnetTaskProgress() {
+    const countAc = magState.ac.magnets.filter(m => m.snappedTo !== null).length;
+    const countEt = magState.et.magnets.filter(m => m.snappedTo !== null).length;
+    const total = countAc + countEt;
+    const badge = document.getElementById('badge-t21');
+    badge.textContent = `${total} / 3 Magneten platziert`;
+    if (total === 3) {
+      markSolved('2-1', 2);
     }
-
-    if (etPushAnimActive) {
-      document.getElementById('cloud-et-ch1').setAttribute('rx', 11 + s * 2.5);
-    }
-
-    requestAnimationFrame(animatePolarizationLoop);
   }
-  animatePolarizationLoop();
+
+  function initMagnets() {
+    ['ac', 'et'].forEach(molKey => {
+      const group = magState[molKey];
+      group.magnets.forEach(m => {
+        const el = document.getElementById(m.id);
+        buildMagnetGraphic(el);
+        el.setAttribute('transform', `translate(${m.x}, ${m.y})`);
+
+        el.addEventListener('pointerdown', e => {
+          e.preventDefault();
+          m.snappedTo = null;
+          el.style.cursor = 'grabbing';
+          // Bring dragged magnet to top of SVG layer
+          group.svg.appendChild(el);
+          activeMagnetDrag = { molKey, magnet: m, el };
+        });
+      });
+    });
+
+    updateAceticBars();
+    updateEthanolBars();
+  }
+
+  window.addEventListener('pointermove', e => {
+    if (!activeMagnetDrag) return;
+    const { molKey, magnet, el } = activeMagnetDrag;
+    const svg = magState[molKey].svg;
+    const pt = clientToSvg(svg, e.clientX, e.clientY);
+
+    magnet.x = Math.max(26, Math.min(374, pt.x));
+    magnet.y = Math.max(22, Math.min(266, pt.y));
+    el.setAttribute('transform', `translate(${magnet.x.toFixed(1)}, ${magnet.y.toFixed(1)})`);
+
+    if (molKey === 'ac') updateAceticBars();
+    else updateEthanolBars();
+  });
+
+  window.addEventListener('pointerup', () => {
+    if (!activeMagnetDrag) return;
+    const { molKey, magnet, el } = activeMagnetDrag;
+    const group = magState[molKey];
+    el.style.cursor = 'grab';
+
+    // Check if dropped close to an unoccupied O-atom target
+    let snappedKey = null;
+    for (const [tKey, pos] of Object.entries(group.targets)) {
+      const occupied = group.magnets.some(other => other !== magnet && other.snappedTo === tKey);
+      if (!occupied && Math.hypot(magnet.x - pos.x, magnet.y - pos.y) < 48) {
+        snappedKey = tKey;
+        magnet.x = pos.x;
+        magnet.y = pos.y - 23; // Sit neatly right on top of the O atom without covering the letter!
+        magnet.snappedTo = tKey;
+        break;
+      }
+    }
+
+    if (!snappedKey) {
+      magnet.x = magnet.homeX;
+      magnet.y = magnet.homeY;
+      magnet.snappedTo = null;
+    }
+
+    el.setAttribute('transform', `translate(${magnet.x}, ${magnet.y})`);
+    activeMagnetDrag = null;
+
+    if (molKey === 'ac') updateAceticBars();
+    else updateEthanolBars();
+
+    updateMagnetTaskProgress();
+  });
+
+  function resetMagnets(molKey) {
+    const group = magState[molKey];
+    group.magnets.forEach(m => {
+      m.x = m.homeX;
+      m.y = m.homeY;
+      m.snappedTo = null;
+      const el = document.getElementById(m.id);
+      el.setAttribute('transform', `translate(${m.x}, ${m.y})`);
+    });
+    if (molKey === 'ac') updateAceticBars();
+    else updateEthanolBars();
+    updateMagnetTaskProgress();
+  }
 
   /* ================= TRUE 3D RIGID ISOSURFACE ESP ENGINE ================= */
   class Rigid3DIsosurfaceViewer {
@@ -2240,7 +2450,6 @@
       this.lastY = 0;
       this.autoSpin = true;
 
-      // Offscreen buffer for true 3D raycasted rigid isosurface
       this.gw = 96;
       this.gh = 54;
       this.offscreen = document.createElement('canvas');
@@ -2291,7 +2500,6 @@
       this.canvas.addEventListener('touchend', end);
     }
 
-    // Orthographic 3D rotation (matches inverse ray-transform 1:1 so 3D shape NEVER warps!)
     projectOrtho(pt, cosY, sinY, cosX, sinX) {
       const x1 = pt.x * cosY - pt.z * sinY;
       const z1 = pt.x * sinY + pt.z * cosY;
@@ -2331,7 +2539,6 @@
       return [r, g, b];
     }
 
-    // True 3D scalar density field F(x, y, z) in molecule object space (100% rotation-invariant!)
     evalDensity3D(x, y, z, atoms) {
       let d = 0;
       for (let i = 0; i < atoms.length; i++) {
@@ -2366,7 +2573,6 @@
         p: this.projectOrtho(a, cosY, sinY, cosX, sinX)
       }));
 
-      // 1. Draw internal Ball-and-Stick model
       const sortedAtoms = [...projAtoms].sort((a, b) => b.p.z - a.p.z);
 
       this.spec.bonds.forEach(b => {
@@ -2412,24 +2618,11 @@
         ctx.fill();
       });
 
-      // 2. Raycast True 3D Isosurface in Object Space (zero shape distortion on rotation!)
       const data = this.imgData.data;
       const atoms = this.spec.atoms;
       const sxRatio = w / this.gw;
       const syRatio = h / this.gh;
       const threshold = 1.0;
-
-      // Inverse rotation matrix rows (R^T) to transform view ray (u, v, zView) -> molecule (x, y, z)
-      // Forward:
-      //   x1 = x*cosY - z*sinY
-      //   z1 = x*sinY + z*cosY
-      //   y2 = y*cosX - z1*sinX
-      //   z2 = y*sinX + z1*cosX
-      // Inverse:
-      //   y  = y2*cosX + z2*sinX
-      //   z1 = -y2*sinX + z2*cosX
-      //   x  = x1*cosY + z1*sinY
-      //   z  = -x1*sinY + z1*cosY
 
       for (let py = 0; py < this.gh; py++) {
         const v = (py + 0.5) * syRatio - h / 2;
@@ -2437,13 +2630,11 @@
           const u = (px + 0.5) * sxRatio - w / 2;
           const idx = (py * this.gw + px) * 4;
 
-          // Quick 2D bounding rejection
           if (u * u + v * v > 155 * 155) {
             data[idx + 3] = 0;
             continue;
           }
 
-          // March front-to-back along zView (-110 to +110)
           let hitZ = null;
           let prevZ = -110;
           let prevD = 0;
@@ -2455,7 +2646,6 @@
 
             const d = this.evalDensity3D(x, y, z, atoms);
             if (d >= threshold) {
-              // Linear interpolation for smooth sub-step surface hit
               const t = (threshold - prevD) / Math.max(0.0001, d - prevD);
               hitZ = prevZ + t * (zView - prevZ);
               break;
@@ -2465,13 +2655,11 @@
           }
 
           if (hitZ !== null) {
-            // Exact 3D surface point in molecule coordinates
             const y = v * cosX + hitZ * sinX;
             const z1 = -v * sinX + hitZ * cosX;
             const x = u * cosY + z1 * sinY;
             const z = -u * sinY + z1 * cosY;
 
-            // Compute 3D gradient (surface normal) and 3D ESP value at (x, y, z)
             let gx = 0, gy = 0, gz = 0;
             let espNum = 0, espDen = 0;
             for (let i = 0; i < atoms.length; i++) {
@@ -2492,7 +2680,6 @@
               espDen += wEsp;
             }
 
-            // Rotate normal back into view space for consistent top-left studio lighting
             const nx1 = gx * cosY - gz * sinY;
             const nz1 = gx * sinY + gz * cosY;
             const ny2 = gy * cosX - nz1 * sinX;
@@ -2500,12 +2687,11 @@
             const nLen = Math.hypot(nx1, ny2, nz2) || 1;
             const nx = nx1 / nLen;
             const ny = ny2 / nLen;
-            const nz = -nz2 / nLen; // outward toward viewer
+            const nz = -nz2 / nLen;
 
             const esp = espDen > 0 ? espNum / espDen : 0;
             let [r, g, b] = this.espToRGB(esp);
 
-            // 3D Phong lighting (diffuse + soft specular highlight)
             const diff = Math.max(0.22, -0.45 * nx - 0.55 * ny + 0.70 * nz);
             const spec = Math.pow(Math.max(0, -0.35 * nx - 0.45 * ny + 0.82 * nz), 14) * 55;
             const shade = 0.58 + 0.52 * diff;
@@ -2514,7 +2700,6 @@
             g = Math.min(255, Math.round(g * shade + spec));
             b = Math.min(255, Math.round(b * shade + spec));
 
-            // Anti-alias grazing rim (nz near 0)
             const rimAlpha = Math.min(1, Math.max(0, nz) / 0.24);
             data[idx] = r;
             data[idx + 1] = g;
@@ -2618,7 +2803,7 @@
   }
   renderAll3D();
 
-  /* ================= PHASE 2: PROTON CLEAVAGE IN VALENZSTRICHFORMEL ================= */
+  /* ================= LEKTION 2: PROTON CLEAVAGE IN VALENZSTRICHFORMEL ================= */
   const clevCanvas = document.getElementById('cleavageCanvas');
   const clevCtx = clevCanvas.getContext('2d');
 
@@ -2671,10 +2856,10 @@
   }
 
   function updateCleavageCompletion() {
-    const badge = document.getElementById('badge-t21');
+    const badge = document.getElementById('badge-t22');
     badge.textContent = `${testedCleavage.size} / 2 Moleküle getestet`;
     if (testedCleavage.size === 2) {
-      markSolved('2-1', 2);
+      markSolved('2-2', 2);
     }
   }
 
@@ -2836,7 +3021,8 @@
       clevCtx.lineWidth = 2;
       clevCtx.stroke();
       drawAtomLabel(clevCtx, 'H', hx, activeOy, '#1d4ed8', 15);
-      drawAtomLabel(clevCtx, clevMode === 'acid' ? 'δδ+' : 'δ+', hx, activeOy - 20, '#1d4ed8', 12);
+      // Nur einfaches δ+ Zeichen!
+      drawAtomLabel(clevCtx, 'δ+', hx, activeOy - 20, '#1d4ed8', 12.5);
     }
 
     clevCtx.fillStyle = '#475569';
@@ -2853,7 +3039,7 @@
   }
   stepAndDrawCleavage();
 
-  /* ================= PHASE 3: MESOMERIE-WERKSTATT (DRAG & DROP AN GRENZFORMEL I, ERGEBNIS AN II) ================= */
+  /* ================= LEKTION 3: MESOMERIE-WERKSTATT ================= */
   const mesoTested = new Set();
 
   function updateMesoWorkshopScore() {
@@ -2878,8 +3064,7 @@
     return ctm ? pt.matrixTransform(ctm.inverse()) : { x: 0, y: 0 };
   }
 
-  // --- Ethanoat-Ion Drag-and-Drop on Grenzformel I -> Live Result on Grenzformel II ---
-  let acMesoStep = 0; // 0 = initial, 1 = C has 5 bonds in GF II (octet violated), 2 = finished
+  let acMesoStep = 0;
   let acDraggingMode = null;
 
   const svgMesoAc = document.getElementById('svg-meso-ac');
@@ -2917,12 +3102,10 @@
     gf1Ghost.setAttribute('opacity', '0');
 
     if (acDraggingMode === 'step1') {
-      // Target on Grenzformel I: lower C-O bond around (192, 166)
       if (Math.hypot(p.x - 192, p.y - 166) < 65) {
         completeAcStep1();
       }
     } else if (acDraggingMode === 'step2') {
-      // Target on Grenzformel I: upper O atom around (226, 71)
       if (Math.hypot(p.x - 226, p.y - 71) < 65) {
         completeAcStep2();
       }
@@ -2932,18 +3115,15 @@
 
   function completeAcStep1() {
     acMesoStep = 1;
-    // On Grenzformel I: show curved electron-pushing arrow 1
     gf1BotLpDrag.style.cursor = 'default';
     document.getElementById('gf1-bot-dropzone').setAttribute('opacity', '0');
     document.getElementById('gf1-arrow-step1').setAttribute('opacity', '1');
 
-    // On Grenzformel II (Result): lower C-O becomes double bond, bottom O loses 3rd lone pair & charge -> C now has 5 bonds!
     document.getElementById('gf2-bot-pibond').setAttribute('opacity', '1');
     document.getElementById('gf2-bot-o-thirdlp').setAttribute('opacity', '0');
     document.getElementById('gf2-bot-o-charge').setAttribute('opacity', '0');
     document.getElementById('gf2-bot-o-text').setAttribute('fill', '#1e293b');
 
-    // Highlight C-atom octet violation in Grenzformel II (5 bonds!)
     const cRing = document.getElementById('gf2-c-octet-ring');
     cRing.setAttribute('stroke', '#dc2626');
     cRing.setAttribute('fill', 'rgba(220,38,38,0.16)');
@@ -2953,7 +3133,6 @@
     void warn.offsetWidth;
     warn.classList.add('show');
 
-    // Highlight upper C=O pi-bond on Grenzformel I as draggable & upper O as drop target
     const topPi1 = document.getElementById('gf1-top-pibond');
     topPi1.setAttribute('stroke', '#dc2626');
     topPi1.setAttribute('stroke-width', '4');
@@ -2973,13 +3152,11 @@
     document.getElementById('gf1-top-o-dropzone').setAttribute('opacity', '0');
     document.getElementById('gf1-arrow-step2').setAttribute('opacity', '1');
 
-    // Update Grenzformel II (Result): upper C=O becomes single bond, upper O gets 3rd lone pair & negative charge!
     document.getElementById('gf2-top-pibond').setAttribute('opacity', '0');
     document.getElementById('gf2-top-o-newlp').setAttribute('opacity', '1');
     document.getElementById('gf2-top-o-text').setAttribute('fill', '#dc2626');
     document.getElementById('gf2-top-o-charge').setAttribute('opacity', '1');
 
-    // Clear C-atom octet violation in Grenzformel II!
     const cRing = document.getElementById('gf2-c-octet-ring');
     cRing.setAttribute('stroke', '#16a34a');
     cRing.setAttribute('fill', 'rgba(22,163,74,0.14)');
@@ -2997,7 +3174,6 @@
     acMesoStep = 0;
     acDraggingMode = null;
 
-    // Reset Grenzformel I
     gf1BotLpDrag.style.cursor = 'grab';
     document.getElementById('gf1-bot-dropzone').setAttribute('opacity', '1');
     document.getElementById('gf1-arrow-step1').setAttribute('opacity', '0');
@@ -3013,7 +3189,6 @@
     topOZone1.setAttribute('stroke', 'transparent');
     topOZone1.setAttribute('fill', 'transparent');
 
-    // Reset Grenzformel II
     document.getElementById('gf2-bot-pibond').setAttribute('opacity', '0');
     document.getElementById('gf2-bot-o-thirdlp').setAttribute('opacity', '1');
     document.getElementById('gf2-bot-o-charge').setAttribute('opacity', '1');
@@ -3034,7 +3209,6 @@
       'Schritt 1: Ziehe in <strong>Grenzformel I</strong> ein blau markiertes nicht-bindendes Elektronenpaar vom unteren Sauerstoff-Atom (O<sup>⊖</sup>) auf die C−O-Einfachbindung! Das Ergebnis siehst du rechts in <strong>Grenzformel II</strong>.';
   }
 
-  // --- Ethanolat-Ion Drag-and-Drop (Left -> Right Result with unsolvable Octet Violation) ---
   let etMesoDone = false;
   let etDragging = false;
   const svgMesoEt = document.getElementById('svg-meso-et');
@@ -3062,14 +3236,12 @@
     etGhost.setAttribute('opacity', '0');
     etDragging = false;
 
-    // Target on left formula: C-O bond around (210, 124)
     if (Math.hypot(p.x - 210, p.y - 124) < 68) {
       etMesoDone = true;
       etLpDrag.style.cursor = 'default';
       document.getElementById('et-co-dropzone').setAttribute('opacity', '0');
       document.getElementById('et-arrow-step1').setAttribute('opacity', '1');
 
-      // Show invalid double bond & octet violation on right formula
       document.getElementById('et-co-pibond').setAttribute('opacity', '1');
       document.getElementById('et-o-charge').setAttribute('opacity', '0');
       document.getElementById('et-o-thirdlp').setAttribute('opacity', '0');
@@ -3106,7 +3278,7 @@
     document.getElementById('etOctetWarning').classList.remove('show');
   }
 
-  /* ================= PHASE 4: CLOZE & NOTEBOOK ================= */
+  /* ================= LEKTION 4: CLOZE & NOTEBOOK ================= */
   let selectedChipEl = null;
 
   function selectChip(chipEl) {
@@ -3182,7 +3354,7 @@
     document.getElementById('fb-4-1').className = 'feedback';
   }
 
-  /* ================= PHASE 4: BONUS RANKING ================= */
+  /* ================= LEKTION 4: BONUS RANKING ================= */
   const acidsData = [
     { id: 'ccl3', name: 'Trichlorethansäure', formula: 'CCl<sub>3</sub>−COOH', rank: 1 },
     { id: 'chcl2', name: 'Dichlorethansäure', formula: 'CHCl<sub>2</sub>−COOH', rank: 2 },
@@ -3249,6 +3421,7 @@
     }
   }
 
+  initMagnets();
   renderRankList();
 </script>
 </body>
